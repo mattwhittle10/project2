@@ -14,19 +14,16 @@ CREATE TABLE customers (
   PRIMARY KEY (customer_id)
 );
 
-DROP DATABASE IF EXISTS spaces_db;
-CREATE DATABASE spaces_db;
-USE spaces_db;
-
 CREATE TABLE products (
   product_id int AUTO_INCREMENT NOT NULL,
   title varchar(60) NOT NULL,
-  img varbinary(max),
+  img LONGBLOB NOT NULL,
   location varchar(30) NOT NULL,
-  available BOOLEAN,
-  price INTEGER(1000) NOT NULL,
+  available BOOLEAN NOT NULL DEFAULT TRUE,
+  price INTEGER(10) NOT NULL,
   category varchar (30) NOT NULL,
+  secure BOOLEAN NOT NULL,
   description varchar(250) NOT NULL,
-  FOREIGN KEY (product_id) REFERENCES customers(customer_id),
+  FOREIGN KEY (customer_id) REFERENCES customers(customer_id) ON DELETE CASCADE,
   PRIMARY KEY(product_id)
 );
