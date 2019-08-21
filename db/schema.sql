@@ -14,10 +14,6 @@ CREATE TABLE customers (
   PRIMARY KEY (customer_id)
 );
 
-DROP DATABASE IF EXISTS spaces_db;
-CREATE DATABASE spaces_db;
-USE spaces_db;
-
 CREATE TABLE products (
   product_id int AUTO_INCREMENT NOT NULL,
   title varchar(60) NOT NULL,
