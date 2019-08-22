@@ -1,6 +1,8 @@
-DROP DATABASE IF EXISTS storage_db;
-CREATE DATABASE storage_db;
-USE storage_db;
+DROP DATABASE IF EXISTS storageApp_db;
+CREATE DATABASE storageApp_db;
+USE storageApp_db;
+
+-- ***Matt, can we change "products" to "listings"? Let me know what you think! Calli***
 
 CREATE TABLE products (
   product_id int AUTO_INCREMENT NOT NULL,
@@ -22,8 +24,24 @@ CREATE TABLE customers (
   last_name  VARCHAR(45) NOT NULL,
   email_address VARCHAR(75) NOT NULL ,
   phone_number   VARCHAR(11),
-  host_rating INT NOT NULL,
-  first_time_login BOOLEAN NOT NULL DEFAULT TRUE,
+  host_rating INT NOT NULL DEFAULT 0,
+  first_time_login BOOLEAN NOT NULL DEFAULT true,
   google_id VARCHAR (255),
   PRIMARY KEY (customer_id)
 );
+
+-- ***alternative idea instead of type***
+
+-- indoor BOOLEAN DEFAULT false,
+-- secure BOOLEAN DEFAULT false, 
+-- full_time_access BOOLEAN DEFAULT false, 
+-- monitored BOOLEAN DEFAULT false, 
+--temp_controlled BOOLENA DEFAULT false
+
+-- # of trues /5 would be their listings rating. 
+-- all of these need be be true to get a 5 star listing.
+-- add these options when making the add-property form.
+
+
+
+
