@@ -1,17 +1,17 @@
-DROP DATABASE IF EXISTS storageApp_db;
-CREATE DATABASE storageApp_db;
-USE storageApp_db;
+DROP DATABASE IF EXISTS storage_db;
+CREATE DATABASE storage_db;
+USE storage_db;
 
 CREATE TABLE products (
   product_id int AUTO_INCREMENT NOT NULL,
-  title varchar(60) NOT NULL,
-  img LONGBLOB NOT NULL,
-  location varchar(30) NOT NULL,
+  title VARCHAR(60) NOT NULL,
+  img_url VARCHAR NOT NULL,
+  location VARCHAR(30) NOT NULL,
   available BOOLEAN NOT NULL DEFAULT TRUE,
   price INTEGER(10) NOT NULL,
-  category varchar (30) NOT NULL,
+  category VARCHAR (30) NOT NULL,
   secure BOOLEAN NOT NULL,
-  description varchar(250) NOT NULL,
+  description VARCHAR(250) NOT NULL,
   PRIMARY KEY(product_id),
   FOREIGN KEY (product_id) REFERENCES customers(customer_id) ON DELETE CASCADE
 );
