@@ -27,6 +27,7 @@ CREATE TABLE customers (
   host_rating INT NOT NULL DEFAULT 0,
   first_time_login BOOLEAN NOT NULL DEFAULT true,
   google_id VARCHAR (255),
+  thumbnail VARCHAR(255),
   PRIMARY KEY (customer_id)
 );
 
