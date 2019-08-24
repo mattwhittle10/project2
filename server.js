@@ -1,10 +1,12 @@
 const express = require('express');
+const passport = require('passport');
+const cookieSession = require('cookie-session');
+const dotenv = require('dotenv').config();
+
 const authRoutes = require('./routes/auth-routes');
 const profileRoutes = require('./routes/profile-routes');
 const listingRoutes = require('./routes/listingRoutes')
 const passportSetup = require('./controller/passport-setup');
-const passport = require('passport');
-const cookieSession = require('cookie-session');
 const keys = require('./config/keys');
 const listing = require('./models/storage');
 
