@@ -1,11 +1,10 @@
 h2 {
     text-align: center;
 }
-img {
 
+img {
     width: 200px;
     height: 200px;
-
 }
 .switch {
     position: relative;
@@ -61,3 +60,10 @@ input:checked + .slider:before {
 .spaces {
     float: left;
 }
+
+/* clipboard and house icon on profile page */
+.usericon{
+    width: 60px;
+    height: auto;
+};
+
