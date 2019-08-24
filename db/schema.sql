@@ -1,33 +1,35 @@
-DROP DATABASE IF EXISTS storageApp_db;
-CREATE DATABASE storageApp_db;
-USE storageApp_db;
-
--- ***Matt, can we change "products" to "listings"? Let me know what you think! Calli***
-
-CREATE TABLE products (
-  product_id int AUTO_INCREMENT NOT NULL,
-  title VARCHAR(60) NOT NULL,
-  img_url VARCHAR NOT NULL,
-  location VARCHAR(30) NOT NULL,
-  available BOOLEAN NOT NULL DEFAULT TRUE,
-  price INTEGER(10) NOT NULL,
-  category VARCHAR (30) NOT NULL,
-  secure BOOLEAN NOT NULL,
-  description VARCHAR(250) NOT NULL,
-  PRIMARY KEY(product_id),
-  FOREIGN KEY (product_id) REFERENCES customers(customer_id) ON DELETE CASCADE
-);
-
+DROP DATABASE IF EXISTS storage_db;
+CREATE DATABASE storage_db;
+USE storage_db;
 CREATE TABLE customers (
-  customer_id  INT NOT NULL AUTO_INCREMENT,
-  first_name  VARCHAR(45) NOT NULL,
-  last_name  VARCHAR(45) NOT NULL,
-  email_address VARCHAR(75) NOT NULL ,
-  phone_number   VARCHAR(11),
-  host_rating INT NOT NULL DEFAULT 0,
-  first_time_login BOOLEAN NOT NULL DEFAULT true,
-  google_id VARCHAR (255),
-  PRIMARY KEY (customer_id)
+customer_id  INTEGER NOT NULL AUTO_INCREMENT,
+first_name  VARCHAR(45) NOT NULL,
+last_name  VARCHAR(45) NOT NULL,
+username VARCHAR(45),
+email_address VARCHAR(75),
+phone_number   VARCHAR(11),
+host_rating INTEGER NOT NULL DEFAULT 0,
+first_time_login BOOLEAN NOT NULL DEFAULT TRUE,
+google_id VARCHAR (255),
+thumbnail VARCHAR(255),
+PRIMARY KEY (customer_id)
+);
+CREATE TABLE products (
+product_id INTEGER AUTO_INCREMENT NOT NULL,
+title VARCHAR(60) NOT NULL,
+img_url VARCHAR(300) NOT NULL,
+address VARCHAR(30) NOT NULL,
+city varchar(20) NOT NULL,
+state varchar(2) NOT NULL,
+zip int(10)NOT NULL,
+available BOOLEAN NOT NULL DEFAULT TRUE,
+price INTEGER(5) NOT NULL,
+category VARCHAR (30) NOT NULL,
+secure BOOLEAN NOT NULL,
+description VARCHAR(250) NOT NULL,
+customer_id  INTEGER ,
+PRIMARY KEY(product_id),
+FOREIGN KEY (customer_id) REFERENCES customers(customer_id) ON DELETE CASCADE
 );
 
 -- ***alternative idea instead of type***
