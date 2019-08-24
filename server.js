@@ -1,6 +1,7 @@
 const express = require('express');
 const authRoutes = require('./routes/auth-routes');
 const profileRoutes = require('./routes/profile-routes');
+const listingRoutes = require('./routes/listingRoutes')
 const passportSetup = require('./controller/passport-setup');
 const passport = require('passport');
 const cookieSession = require('cookie-session');
@@ -36,6 +37,7 @@ app.set("view engine", "handlebars");
 //set up routes
 app.use('/auth', authRoutes);
 app.use('/profile', profileRoutes);
+app.use('/listings', listingRoutes);
 
 //create home route
 app.get('/', (req, res)=>{
