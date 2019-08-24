@@ -1,9 +1,9 @@
 const mysql = require('mysql');
 
 var connection = mysql.createConnection({
-    port: 8889,
+    port: 3306,
     user: "root",
-    password: "root",
+    password: "",
     database: "storage_db"
 });
 
