@@ -1,7 +1,7 @@
 const mysql = require('mysql');
 
 var connection = mysql.createConnection({
-    port: 3306,
+    port: process.env.MYSQL_PORT,
     user: "root",
     password: "",
     database: "storage_db"
