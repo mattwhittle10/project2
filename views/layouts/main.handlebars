@@ -16,6 +16,12 @@
 
   <!--External CSS-->
   <link rel="stylesheet" href="/assets/css/style.css">
+  <style>
+	  .gmailicon{
+		  width:40px;
+		  height: auto;
+	  }
+  </style>
 
 <body>
 	<!-- TOP NAV -->
@@ -45,7 +51,7 @@
 				</li>
         {{/if}}
 				{{#if user}}
-				<img src='{{user.thumbnail}}' class="rounded-circle float-right" alt="prfile picture" width="40px">
+				<img src='{{user.thumbnail}}' class="rounded-circle float-right gmailicon" alt="profile picture">
 				{{/if}}
 			</ul>
 		</div>

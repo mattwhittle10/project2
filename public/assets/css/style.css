@@ -2,11 +2,14 @@ h2 {
     text-align: center;
 }
 
-
-
 img {
-
     width: 200px;
     height: 200px;
+}
 
+/* clipboard and house icon on profile page */
+.usericon{
+    width: 60px;
+    height: auto;
+};
 
