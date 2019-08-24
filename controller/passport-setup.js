@@ -29,13 +29,16 @@ passport.use(
 
 }, (accessToken, refreshToken, profile, done)=>{
     //passport callback function
-    // console.log(profile);
+    console.log(profile);
     //returns user data in object
     
     var username = profile.displayName;
     var first_name = profile.name.givenName;
     var last_name = profile.name.familyName;
     var google_id = profile.id;
+    var thumbnail = profile.photos[0].value;
+
+    console.log(thumbnail)
   //figure out how to capture email!!
 
     // check to see if user has been to the site before
@@ -54,8 +57,8 @@ passport.use(
     function addUser(cb){
         //if they have, RETRIEVE data
         //if they haven't, CREATE a new record
-        var sql = "INSERT INTO customers (username, first_name, last_name, google_id) VALUES ?;";
-        var values = [[username, first_name, last_name, google_id]];
+        var sql = "INSERT INTO customers (username, first_name, last_name, google_id,thumbnail) VALUES ?;";
+        var values = [[username, first_name, last_name, google_id, thumbnail]];
         connection.query(sql, [values], function(err, res){
             if(err) throw err;
             connection.query("SELECT * FROM customers WHERE customer_id = LAST_INSERT_ID();", function(err, res){
