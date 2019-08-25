@@ -17,9 +17,9 @@ const router = require('express').Router();
 
   });
 
-  //Update
+  //Update a user
   router.put('/api/users/:id', function(req, res){
-
+    customer.updateUser
   });
 
   

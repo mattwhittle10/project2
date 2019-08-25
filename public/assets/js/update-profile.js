@@ -11,15 +11,15 @@ $('#profile-update').on("submit", function(event){
     };
     console.log(newCustomer);
 
-    // $.ajax('/api/users/' + id, { //WHAT IS ID??
-    //     type: "PUT",
-    //     data: newCustomer,
-    // }).then(
-    //     function(){
-    //         console.log("updated user data");
-    //         location.reload();
-    //     }
-    // )
+    $.ajax('/api/users/' + id, { //WHAT IS ID??
+        type: "PUT",
+        data: newCustomer,
+    }).then(
+        function(){
+            console.log("updated user data");
+            location.reload();
+        }
+    )
 
 });
 

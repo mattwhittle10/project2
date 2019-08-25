@@ -44,7 +44,14 @@ app.use('/listings', listingRoutes);
 
 //create home route
 app.get('/', (req, res)=>{
-    res.render('index', {user:req.user});
+    listing.allListings(function(data){
+        var listings = {
+          listings: data
+        };
+        //listings = JSON.stringify(listings);
+        console.log(listings);
+        res.render('index', {user:req.user, listings})
+      });
 });
 
 

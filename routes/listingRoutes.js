@@ -3,20 +3,13 @@ const listing = require('../models/storage');
 
   router.get("/", function (req, res) {
     listing.allListings(function(data){
-      var listing = {
+      var listings = {
         listings: data
       }
-      console.log(listing);
-      res.render('listings', {user:req.user, listing})
+      listings = JSON.stringify(listings);
+      console.log(listings);
+      res.render('listings', {user:req.user, listings})
     })
-
-    // listing.listingsByZip(function(data){
-    //   var hbsObject = {
-    //     listings: data
-    //   }
-    //   console.log(hbsObject);
-    //   res.render("listings", hbsObject);
-    // })
     
   });
 
