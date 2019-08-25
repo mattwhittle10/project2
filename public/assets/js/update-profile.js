@@ -1,13 +1,26 @@
-$('#profile-update').on("click", function(event){
+$('#profile-update').on("submit", function(event){
     event.preventDefault();
     alert("you're data is almost changed");
-    var username = $('#username').val();
-    var firstname = $('#firstname').val();
-    var lastname = $('#lastname').val();
-    var email = $('#email').val();
-    var phone = $('#phone').val();
-    var thumbnail = $('#thumbnail').val();
+    var newCustomer = {
+        first_name: $('#firstname').val().trim(),
+        last_name: $('#lastname').val().trim(),
+        username: $('#username').val().trim(),
+        email_address: $('#email').val().trim(),
+        phone_number: $('#phone').val().trim(),
+        thumbnail: $('#thumbnail').val().trim()
+    };
+    console.log(newCustomer);
 
-    console.log(username, firstname, lastname, email, phone, thumbnail);
+    // $.ajax('/api/users/' + id, { //WHAT IS ID??
+    //     type: "PUT",
+    //     data: newCustomer,
+    // }).then(
+    //     function(){
+    //         console.log("updated user data");
+    //         location.reload();
+    //     }
+    // )
 
 });
+
+// Example starter JavaScript for disabling form submissions if there are invalid fields

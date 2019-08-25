@@ -15,6 +15,15 @@ var orm = {
     connection.query(queryString, [tableInput, colToSearch, valOfCol], function (err, result) {
       if (err) throw err;
       console.log(result);
+      cb(result);
+    });
+  },
+  updateUser: function(tableInput, col1, val1, col2, val2, col3, val3, col4, val4, col5, val5, col6, val6, idVal){
+    var queryString = "UPDATE ?? SET ??=?, ??=?, ??=?, ??=?, ??=?, ??=? WHERE id = ??;";
+    values = [tableInput, col1, val1, col2, val2, col3, val3, col4, val4, col5, val5, col6, val6, idVal];
+    connection.query(queryString,[values], function(err, res){
+      if(err) throw err;
+      cb(res);
     });
   }
 
