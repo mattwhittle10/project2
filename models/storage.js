@@ -11,6 +11,11 @@ var listing = {
             cb(res);
         });
     },
+    userListings: function(id, cb){
+        orm.userListings("products", "customer_id", id, function(res){
+            cb(res);
+        })
+    }
 };
 
 module.exports = listing;

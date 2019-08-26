@@ -18,13 +18,21 @@ var orm = {
       cb(result);
     });
   },
-  updateUser: function(tableInput, col1, val1, col2, val2, col3, val3, col4, val4, col5, val5, col6, val6, idVal){
+  updateUser: function(tableInput, col1, val1, col2, val2, col3, val3, col4, val4, col5, val5, col6, val6, idVal, cb){
     var queryString = "UPDATE ?? SET ??=?, ??=?, ??=?, ??=?, ??=?, ??=? WHERE id = ??;";
     values = [tableInput, col1, val1, col2, val2, col3, val3, col4, val4, col5, val5, col6, val6, idVal];
     connection.query(queryString,[values], function(err, res){
       if(err) throw err;
       cb(res);
     });
+  },
+  userListings: function(tableInput, col, val, cb){
+    var queryString = "SELECT * FROM ?? WHERE ?? = ??";
+    connection.query(queryString, [tableInput, col, val], function(err, res){
+      if(err) throw err;
+      cb(res);
+    })
+    // tableInput, column, value
   }
 
 

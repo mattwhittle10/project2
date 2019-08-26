@@ -21,9 +21,13 @@
 <div class="container">
     <div class="row">
         {{#each listings}}
-           <h4>{{this}}</h4> 
+            {{#if available}}
+           <h4></h4>{{this.title}}</h4> 
+           <h4>{{this.description}}</h4>
+           <h4>${{this.price}}</h4>
+           <img src="{{this.img_url}}">
+           {{/if}}
         {{/each}}
-        <div class="col">CARD WILL GO HERE</div>
     </div>
 </div>
 
