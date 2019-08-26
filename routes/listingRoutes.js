@@ -3,13 +3,10 @@ const listing = require('../models/storage');
 
   router.get("/", function (req, res) {
     listing.allListings(function(data){
-      var listings = {
-        listings: data
-      }
-      listings = JSON.stringify(listings);
-      console.log(listings);
+      var listings = data;
+      console.log("YOU MADE IT To ThE LISTING");
       res.render('listings', {user:req.user, listings})
-    })
+    });
     
   });
 

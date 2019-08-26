@@ -1,4 +1,6 @@
-
+body{
+    height: 1000px;
+}
 h2 {
     text-align: center;
 }
@@ -67,4 +69,3 @@ input:checked + .slider:before {
     width: 60px;
     height: auto;
 };
-

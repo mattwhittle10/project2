@@ -11,7 +11,8 @@
             <input type="text" class="form-control" placeholder="Enter a Zip Code" aria-label="zipcode"
                 aria-describedby="button-addon2">
             <div class="input-group-append">
-                <a href="/listings"><button class="btn-outline-secondary" type="button" id="button-addon2">Search for Storage</button></a>
+                <a href="/listings"><button class="btn-outline-secondary" type="button" id="button-addon2">Search for
+                        Storage</button></a>
             </div>
         </div>
     </div>
@@ -21,30 +22,36 @@
 <div class="container">
     <div class="row">
         {{#each listings}}
-            {{#if available}}
-           <h4></h4>{{this.title}}</h4> 
-           <h4>{{this.description}}</h4>
-           <h4>${{this.price}}</h4>
-           <img src="{{this.img_url}}">
-           {{/if}}
+        {{#if available}}
+        <div class="card" style="width: 18rem;">
+            <img src="{{this.img_url}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{this.title}}</h5>
+                <p class="card-text">${{this.price}}/month</p>
+                <a href="#" class="btn btn-primary">view</a>
+            </div>
+        </div>
+        {{/if}}
         {{/each}}
     </div>
 </div>
 
-	<!-- Footer -->
-	<div class="card fixed-bottom">
-		<div class="card-footer">
-			Real User's Comments
-		</div>
-		<div class="card-body">
-			<blockquote class="blockquote mb-0">
-				<p>The site was so easy to use!</p>
-				<footer class="blockquote-footer">The best in it's class - HANDS DOWN. <cite
-						title="Source Title">Jonathan Bae Jerano</cite>
-				</footer>
-			</blockquote>
-		</div>
-	</div>
+<br>
+<br>
+<!-- Footer -->
+<div class="card fixed-bottom">
+    <div class="card-footer">
+        Real User's Comments
+    </div>
+    <div class="card-body">
+        <blockquote class="blockquote mb-0">
+            <p>The site was so easy to use!</p>
+            <footer class="blockquote-footer">The best in it's class - HANDS DOWN. <cite title="Source Title">Jonathan
+                    Bae Jerano</cite>
+            </footer>
+        </blockquote>
+    </div>
+</div>
 
 
 <script src="/assets/js/index.js"></script>
