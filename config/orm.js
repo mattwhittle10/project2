@@ -18,10 +18,16 @@ var orm = {
       cb(result);
     });
   },
-  updateUser: function(tableInput, col1, val1, col2, val2, col3, val3, col4, val4, col5, val5, col6, val6, userId, cb){
-    var queryString = "UPDATE ?? SET ??=?, ??=?, ??=?, ??=?, ??=?, ??=? WHERE id = ?;";
-    values = [tableInput, col1, val1, col2, val2, col3, val3, col4, val4, col5, val5, col6, val6, userId];
-    connection.query(queryString,[values], function(err, res){
+  updateUser: function(tableInput, objColVals, condition, cb){
+    var queryString = "UPDATE " + tableInput;
+    queryString += " SET ";
+    queryString += objToSql(objColVals);
+    queryString += " WHERE ";
+    queryString += condition;
+
+    console.log(queryString);
+
+    connection.query(queryString, function(err, res){
       if(err) throw err;
       cb(res);
     });

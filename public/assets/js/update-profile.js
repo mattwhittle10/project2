@@ -1,6 +1,7 @@
-$('#profile-update').on("click", function(event){
+$('.profile-update').on("click", function(event){
     event.preventDefault();
-    
+
+    var id = $(this).attr('id');
     var username = $('#username').val();
     var first = $('#firstname').val();
     var last = $('#lastname').val();
@@ -8,6 +9,27 @@ $('#profile-update').on("click", function(event){
     var phone = $('#phone').val();
     var photo = $('#thumbnail').val();
 
+    var newUserData = {
+        customer_id: id, 
+        first_name: first,
+        last_name: last,
+        username: username,
+        email_address: email,
+        phone_number: phone,
+        thumbnail: photo
+    };
+
+    console.log(username, first, last, email, phone, photo);
+
+    //send the PUT request
+    $.ajax('/api/customers/' + id, {
+        type: "PUT",
+        data: newUserData
+    }).then(function(){
+        console.log("updated customer data");
+        //reload the page to get the updated user information
+        location.reload();
+    })
     
 });
 

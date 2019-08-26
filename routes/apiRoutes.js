@@ -18,9 +18,11 @@ const router = require('express').Router();
   });
 
   //Update a user
-  router.put('/api/users/:id', function(req, res){
-    customer.updateUser
-  });
+  router.put('/api/customers/:id', function(req, res){
+    var condition = "customer_id =" + req.params.id;
+    console.log(condition);
+
+});
 
   
   module.exports = router;

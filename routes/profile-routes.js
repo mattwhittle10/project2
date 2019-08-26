@@ -19,10 +19,10 @@ router.get('/', authCheck, (req,res) =>{
 });
 
 router.get('/update', (req, res) =>{
-    // var id = parseInt(req.user.customer_id);
+    var id = parseInt(req.user.customer_id);
     //stores the users individual 
-    // console.log(id);
-    res.render('update-profile', {user:req.user});
+    res.render('update-profile', {user:req.user, id});
 });
+
 
 module.exports = router;
