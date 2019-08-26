@@ -10,40 +10,71 @@
 <div class="container">
     <div class="row justify-content-md-center">
         <div class="col col-lg-2">
-            <a href="#"><img src="assets/images/postHome.png" class="usericon" title="Post a Listing" alt="New Listing"></a>
+            <a href="#"><img src="assets/images/postHome.png" class="usericon" title="Post a Listing"
+                    alt="New Listing"></a>
         </div>
         <div class="col-md-auto">
 
         </div>
         <div class="col col-lg-2">
-            <a href="/profile/update"><img src="assets/images/clipBoard.jpg" class="usericon" title="Update Profile" alt="Update Profile"></a>
+            <a href="/profile/update"><img src="assets/images/clipBoard.jpg" class="usericon" title="Update Profile"
+                    alt="Update Profile"></a>
         </div>
     </div>
 
     <!-- SECOND HALF OF HOMEPAGE -->
+    {{!-- I WILL DO A DIFFERENT CALL FOR THE LISTINGS FROM THE DB --}}
     <div class="container">
         <h2>Your Favorites</h2>
-        <div class="row">
-            <div class="col">Dynamically Generated Card</div>
-            <div class="col">Dynamically Generated Card</div>
-            <div class="col">Dynamically Generated Card</div>
-            <div class="col">Dynamically Generated Card</div>
+        <div class="container">
+            <div class="row">
+                {{#each listings}}
+                <div class="card viewListingsCards wrapper" style="width: 18rem;">
+                    <img class="card-img-top" src="{{this.img_url}}" alt="Property Image">
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.title}}</h5>
+                        <p class="card-text"><small class="text-muted">Price: ${{this.price}}/month</small></p>
+                        <p class="card-text"><small class="text-muted">Category: {{this.category}}</small></p>
+                        <p class="card-text"><small class="text-muted">Location: {{this.city}}, {{this.state}}</small></p>
+                        <a href="#" id="viewListing" class="btn btn-primary">View Listing</a>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
         </div>
-    </div>
+
+        {{!-- Divider Line --}}
+        <hr>
 
 
-    <br>
-    <br>
-    <hr>
-    <br>
-    <br>
 
-    <div class="container">
-        <h2>Your Postings</h2>
-        <div class="row">
-            <div class="col">Dynamically Generated Card</div>
-            <div class="col">Dynamically Generated Card</div>
-            <div class="col">Dynamically Generated Card</div>
-            <div class="col">Dynamically Generated Card</div>
+        {{!-- I WILL DO A DIFFERENT CALL FOR THE LISTINGS FROM THE DB --}}
+        <div class="container">
+            <h2>Your Postings</h2>
+            <div class="container">
+                <div class="row">
+                    {{#each listings}}
+                    {{#if available}}
+                    <div class="card viewListingsCards wrapper" style="width: 18rem;">
+                        <img class="card-img-top" src="{{this.img_url}}" alt="Property Image">
+                        <div class="card-body">
+                            <h5 class="card-title">{{this.title}}</h5>
+                            <p class="card-text"><small class="text-muted">Price: ${{this.price}}/month</small></p>
+                            <p class="card-text"><small class="text-muted">Category: {{this.category}}</small></p>
+                            <p class="card-text"><small class="text-muted">Location: {{this.city}},
+                                    {{this.state}}</small></p>
+                            <a href="#" id="viewListing" class="btn btn-primary">Update Postings</a>
+                        </div>
+                    </div>
+                    {{/if}}
+                    {{/each}}
+                </div>
+            </div>
         </div>
-    </div>
+
+        <!-- Footer -->
+        <div class="card fixed-bottom">
+            <div class="card-footer"></div>
+            <div class="card-body">
+            </div>
+        </div>
