@@ -1,0 +1,73 @@
+{{#each storages}}
+{{!-- {{#if this.secure}}
+    {{setVar "value1" "Value true"}}  
+{{/if}} --}}
+{{this.product_id}}
+<div class="wrapper">
+    <div class="jumbotron" style="background-color: white ">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <form id="usrform">
+                        <div id="display_img"></div><br>
+
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">Title :</label>
+                            <input id="title" type="text" class="form-control" id="formGroupExampleInput"
+                                value="{{this.title}}" readonly>
+                        </div><br>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">Location :</label>
+                            <input id="location" type="text" class="form-control" id="formGroupExampleInput"
+                                value="{{this.location}}" placeholder="location" readonly>
+                        </div><br>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">Category :</label>
+                            <input id="category" type="text" class="form-control" id="formGroupExampleInput"
+                                value={{this.category}} placeholder="category" readonly>
+                        </div><br>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">Secure :</label>
+                            <input id="secure" type="text" class="form-control" id="formGroupExampleInput"
+                                value="{{#if this.secure}}true
+                                    {{else}}false
+                                    {{/if}}" placeholder="secure" readonly>
+                        </div><br>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">Price :</label>
+                            <input id="price" type="number" class="form-control" id="formGroupExampleInput"
+                                value={{this.price}} placeholder="price" readonly>
+                        </div><br>
+                        {{!-- <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Description :</label>
+                                <textarea id="description" class="form-control" id="exampleFormControlTextarea1"value= {{this.description}}
+                                    rows="5" readonly></textarea>
+                            </div><br> --}}
+                        <textarea rows="4" name="comment" readonly
+                            style="width: 100%">{{this.description}}</textarea>
+                        <br>
+                        <div id="newpricediv" class="form-group" style="display:none">
+                            <label for="formGroupExampleInput"> New Price :</label><br>
+                            <input id="newprice" type="number" class="form-control" id="formGroupExampleInput"
+                                placeholder="newprice">
+                        </div><br>
+                        <button id="update" type="update" class="btn btn-primary"
+                            style="background-color: grey">Update</button>
+                        <button id="delete" type="delete" class="btn btn-primary"
+                            style="background-color: grey">Delete</button>
+                        <button  id="confirmUpdate" data-product_id="{{this.product_id}}" type="confirmUpdate" class="btn btn-primary"
+                            style="background-color: grey; display:none">Confirm Update</button>
+                        <button  id="confirmDelete" data-product_id="{{this.product_id}}" type="confirmDelete" class="btn btn-primary"
+                            style="background-color: grey ; display:none">Confirm Delete</button>
+                        <button id="cancel" type="cancel" class="btn btn-primary"
+                            style="background-color: grey; display:none">Cancel</button>
+
+                    </form>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
