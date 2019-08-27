@@ -24,7 +24,7 @@ app.use(cookieSession({
 }));
 
 //parse request body as JSON
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //initialize passport
@@ -43,12 +43,17 @@ app.use('/profile', profileRoutes);
 app.use('/listings', listingRoutes);
 
 //create home route
-app.get('/', (req, res)=>{
-    res.render('index', {user:req.user});
+app.get('/', (req, res) => {
+    listing.allListings(function (data) {
+        var listings = data;
+        console.log(listings)
+        res.render('index', { user: req.user, listings });
+    })
 });
 
 
 
-app.listen(PORT, function(){
+
+app.listen(PORT, function () {
     console.log("App is now listening on http://localhost:" + PORT);
 });
