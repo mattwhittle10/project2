@@ -18,9 +18,6 @@ $('.profile-update').on("click", function(event){
         phone_number: phone,
         thumbnail: photo
     };
-
-    console.log(username, first, last, email, phone, photo);
-    console.log(newUserData);
     //send the PUT request
     $.ajax({
         url: "/api/customers/" + id,

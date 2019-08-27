@@ -38,7 +38,7 @@ $(function () {
             function () {
                 console.log("record updated");
                 // Reload the page to get the updated list
-                // location.reload();
+                location.reload();
             }
         );
 
