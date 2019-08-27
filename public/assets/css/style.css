@@ -68,4 +68,22 @@ input:checked + .slider:before {
 .usericon{
     width: 60px;
     height: auto;
+
 };
+
+
+
+
+/* styling the cards */
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2px;
+}
+
+.viewListingsCards{
+    margin: 25px;
+}
+
+
+

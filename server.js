@@ -25,7 +25,7 @@ app.use(cookieSession({
 }));
 
 //parse request body as JSON
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //initialize passport
@@ -45,6 +45,7 @@ app.use('/listings', listingRoutes);
 app.use('/api', apiRoutes);
 
 //create home route
+
 app.get('/', (req, res)=>{
     listing.allListings(function(data){
         var listings = data;
@@ -53,5 +54,6 @@ app.get('/', (req, res)=>{
 });
 
 app.listen(PORT, function(){
+
     console.log("App is now listening on http://localhost:" + PORT);
 });
