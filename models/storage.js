@@ -9,7 +9,7 @@ var listing = {
     listingsByZip: function (cb) {
         orm.listingsByZip("products", "zipcode", zipcodeInput, function (res) {
             cb(res);
-        })
+        });
     }
 };
 
