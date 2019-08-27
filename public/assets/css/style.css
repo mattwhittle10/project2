@@ -71,8 +71,6 @@ input:checked + .slider:before {
 
 };
 
-<<<<<<< HEAD
-=======
 /* styling the cards */
 .wrapper{
     display: grid;
@@ -83,4 +81,14 @@ input:checked + .slider:before {
 .viewListingsCards{
     margin: 25px;
 }
->>>>>>> 9874606ff2fa2d1217e700206152f2e5dab375a9
+
+#mapImage {
+    height: 100%;
+    width: 40%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    overflow-x: hidden;
+    padding-top: 0;
+  }
