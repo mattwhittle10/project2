@@ -7,7 +7,7 @@ const authRoutes = require('./routes/auth-routes');
 const profileRoutes = require('./routes/profile-routes');
 const listingRoutes = require('./routes/listingRoutes')
 const apiRoutes = require('./routes/apiRoutes');
-const passportSetup = require('./controller/passport-setup');
+const passportSetup = require('./models/passport-setup');
 const keys = require('./config/keys');
 const listing = require('./models/storage');
 
