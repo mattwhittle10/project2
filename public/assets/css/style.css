@@ -67,7 +67,8 @@ input:checked + .slider:before {
     height: auto;
 };
 
-<<<<<<< HEAD
+
+
 /* styling the cards */
 .wrapper{
     display: grid;
@@ -80,6 +81,5 @@ input:checked + .slider:before {
 }
 
 
-=======
->>>>>>> cfedca5e7dab8773243dff36fcfb03d4c2bc57f2
+
 
