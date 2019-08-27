@@ -71,9 +71,6 @@ input:checked + .slider:before {
 
 };
 
-
-
-
 /* styling the cards */
 .wrapper{
     display: grid;
@@ -84,6 +81,3 @@ input:checked + .slider:before {
 .viewListingsCards{
     margin: 25px;
 }
-
-
-
