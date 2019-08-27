@@ -2,7 +2,7 @@ body{
     height: 1000px;
 }
 h2 {
-    text-align: center;
+    text-align: left;
 }
 
 img {
@@ -71,6 +71,8 @@ input:checked + .slider:before {
 
 };
 
+<<<<<<< HEAD
+=======
 /* styling the cards */
 .wrapper{
     display: grid;
@@ -81,3 +83,4 @@ input:checked + .slider:before {
 .viewListingsCards{
     margin: 25px;
 }
+>>>>>>> 9874606ff2fa2d1217e700206152f2e5dab375a9
