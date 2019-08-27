@@ -16,7 +16,6 @@ const authCheck = (req, res, next) => {
 router.get('/', authCheck, (req, res) => {
     listing.allListings(function(data){
         var listings = data;
-        console.log(listings);
         //profile page will render here! passing in the user object with all of the details 
         //send in a view here
         res.render('profile', {user:req.user, listings});   
