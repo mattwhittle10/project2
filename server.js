@@ -6,6 +6,7 @@ const dotenv = require('dotenv').config();
 const authRoutes = require('./routes/auth-routes');
 const profileRoutes = require('./routes/profile-routes');
 const listingRoutes = require('./routes/listingRoutes')
+const apiRoutes = require('./routes/apiRoutes');
 const passportSetup = require('./controller/passport-setup');
 const keys = require('./config/keys');
 const listing = require('./models/storage');
@@ -24,7 +25,7 @@ app.use(cookieSession({
 }));
 
 //parse request body as JSON
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //initialize passport
@@ -41,14 +42,18 @@ app.set("view engine", "handlebars");
 app.use('/auth', authRoutes);
 app.use('/profile', profileRoutes);
 app.use('/listings', listingRoutes);
+app.use('/api', apiRoutes);
 
 //create home route
+
 app.get('/', (req, res)=>{
-    res.render('index', {user:req.user});
+    listing.allListings(function(data){
+        var listings = data;
+        res.render('index', {user:req.user, listings})
+      });
 });
 
-
-
 app.listen(PORT, function(){
+
     console.log("App is now listening on http://localhost:" + PORT);
 });

@@ -1,3 +1,6 @@
+body{
+    height: 1000px;
+}
 h2 {
     text-align: left;
 }
@@ -65,5 +68,19 @@ input:checked + .slider:before {
 .usericon{
     width: 60px;
     height: auto;
+
 };
 
+<<<<<<< HEAD
+=======
+/* styling the cards */
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 2px;
+}
+
+.viewListingsCards{
+    margin: 25px;
+}
+>>>>>>> 9874606ff2fa2d1217e700206152f2e5dab375a9
