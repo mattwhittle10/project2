@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const authroutes = require('./auth-routes');
-const listing = require('../models/storage')
+const listing = require('../models/storage');
+
 
 const authCheck = (req, res, next) => {
     if (!req.user) {
@@ -15,17 +16,14 @@ const authCheck = (req, res, next) => {
 router.get('/', authCheck, (req, res) => {
     //profile page will render here! passing in the user object with all of the details 
     //send in a view here
-    listing.allListings(function (data) {
-        var listings = data;
-        console.log(listings)
-        res.render('profile', { user: req.user, listings });
-    })
+
+        res.render('profile', {user:req.user});   
 });
 
-router.get('/update', (req, res) => {
-    res.render('update-profile', { user: req.user });
+router.get('/update', (req, res) =>{
+    var id = parseInt(req.user.customer_id);
+    //stores the users individual 
+    res.render('update-profile', {user:req.user, id});
 });
-
-
 
 module.exports = router;
