@@ -1,3 +1,6 @@
+body{
+    height: 1000px;
+}
 h2 {
     text-align: center;
 }
@@ -65,7 +68,10 @@ input:checked + .slider:before {
 .usericon{
     width: 60px;
     height: auto;
+
 };
+
+
 
 
 /* styling the cards */
@@ -78,5 +84,6 @@ input:checked + .slider:before {
 .viewListingsCards{
     margin: 25px;
 }
+
 
 

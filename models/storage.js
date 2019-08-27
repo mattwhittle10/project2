@@ -10,6 +10,13 @@ var listing = {
         orm.listingsByZip("products", "zipcode", zipcodeInput, function (res) {
             cb(res);
         });
+
+    },
+    userListings: function(id, cb){
+        orm.userListings("products", "customer_id", id, function(res){
+            cb(res);
+        })
+
     }
 };
 
