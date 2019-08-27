@@ -3,24 +3,28 @@ var customer = require('../models/customer');
 const router = require('express').Router();
 
   // Get all examples
-  router.get("/api/listings", function(req, res) {
+  router.get("/listings", function(req, res) {
 
   });
 
   // Create a new listing
-  router.post("/api/listings", function(req, res) {
+  router.post("/listings", function(req, res) {
 
   });  
 
   // Delete a listing
-  router.delete("/api/listings/:id", function(req, res) {
+  router.delete("/listings/:id", function(req, res) {
 
   });
 
   //Update a user
-  router.put('/api/customers/:id', function(req, res){
+  router.put('/customers/:id', function(req, res){
+    var userObj = req.body;
     var condition = "customer_id =" + req.params.id;
-    console.log(condition);
+    customer.updateUser(userObj, condition, function(){
+      res.status(204).end();
+    });
+    // console.log(userObj, condition);
 
 });
 

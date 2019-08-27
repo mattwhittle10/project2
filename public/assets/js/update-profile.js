@@ -20,13 +20,13 @@ $('.profile-update').on("click", function(event){
     };
 
     console.log(username, first, last, email, phone, photo);
-
+    console.log(newUserData);
     //send the PUT request
-    $.ajax('/api/customers/' + id, {
+    $.ajax({
+        url: "/api/customers/" + id,
         type: "PUT",
         data: newUserData
-    }).then(function(){
-        console.log("updated customer data");
+    }).then(function(data){
         //reload the page to get the updated user information
         location.reload();
     })
