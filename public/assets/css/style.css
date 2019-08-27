@@ -1,5 +1,5 @@
 h2 {
-    text-align: center;
+    text-align: left;
 }
 
 img {
@@ -66,5 +66,4 @@ input:checked + .slider:before {
     width: 60px;
     height: auto;
 };
-
 
