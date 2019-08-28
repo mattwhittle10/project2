@@ -79,3 +79,8 @@ input:checked + .slider:before {
 .viewListingsCards{
     margin: 25px;
 }
+
+.footer{
+    width: 100%;
+    
+}
