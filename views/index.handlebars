@@ -10,17 +10,18 @@
         <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Enter a Zip Code" aria-label="zipcode"
                 aria-describedby="button-addon2">
-            <div class="input-group-append">
 
-                <a href="/listings">
-                    <btn "btn-outline-secondary" type="button" id="button-addon2">Search for Storage</button>
-                </a>
+            <div class="input-group-append">
+                <a class="btn btn-outline-secondary" role="button" href="/listings" id="button-addon2">Search for
+                    Storage</a>
             </div>
+
         </div>
     </div>
 </div>
 
 <!-- SECOND HALF OF HOMEPAGE -->
+
       <div class="container">
             <div class="row">
                 {{#each listings}}
@@ -39,21 +40,7 @@
                 {{/each}}
             </div>
         </div>
-
-
-<!-- Footer -->
-<div class="card">
-    <div class="card-footer">
-        Real User's Comments
-    </div>
-    <div class="card-body">
-        <blockquote class="blockquote mb-0">
-            <p>The site was so easy to use!</p>
-            <footer class="blockquote-footer">The best in it's class - HANDS DOWN. <cite title="Source Title">Jonathan
-                    Bae Jerano</cite>
-            </footer>
-        </blockquote>
+        {{/if}}
+        {{/each}}
     </div>
 </div>
-
-
