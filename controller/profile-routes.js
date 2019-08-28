@@ -28,4 +28,14 @@ router.get('/update', (req, res) =>{
     res.render('update-profile', {user:req.user, id});
 });
 
+
+router.get("/listing/:id", function (req, res) {
+    var id = req.params.id;
+    listing.indivListing(id,function(data){
+      var listing = data;
+      console.log(listing);
+      res.render('each-listing', {user:req.user, listing});
+    })
+  });
+
 module.exports = router;
