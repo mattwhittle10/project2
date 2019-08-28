@@ -10,6 +10,7 @@ const apiRoutes = require('./routes/apiRoutes');
 const passportSetup = require('./controller/passport-setup');
 const keys = require('./config/keys');
 const listing = require('./models/storage');
+const routes = require("./controller/controller.js");
 
 const app = express();
 
@@ -43,6 +44,7 @@ app.use('/auth', authRoutes);
 app.use('/profile', profileRoutes);
 app.use('/listings', listingRoutes);
 app.use('/api', apiRoutes);
+app.use(routes);
 
 //create home route
 
