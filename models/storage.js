@@ -35,6 +35,12 @@ var listing = {
         orm.delete("products", condition, function(res) {
           cb(res);
         });
+      },
+
+      indivListing: function(condition, cb){
+        orm.selectWhere("products", "product_id", condition, function(res){
+          cb(res);
+        });
       }
 };
 

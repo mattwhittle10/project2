@@ -44,6 +44,7 @@ app.use('/profile', profileRoutes);
 app.use('/listings', listingRoutes);
 app.use('/api', apiRoutes);
 
+
 //create home route
 
 app.get('/', (req, res)=>{
