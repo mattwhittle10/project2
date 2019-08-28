@@ -82,13 +82,17 @@ input:checked + .slider:before {
     margin: 25px;
 }
 
-#mapImage {
-    height: 100%;
-    width: 40%;
+.sticky {
     position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    overflow-x: hidden;
-    padding-top: 0;
-  }
+    top: 2%;
+    width: 23.7%;
+}
+
+.mapView {
+    margin-left: 88%;
+}
+
+.favorites {
+    color: red;
+}
+

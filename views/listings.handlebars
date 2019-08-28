@@ -13,52 +13,46 @@
     </div>
 </div>
 
+<h2 style="margin-left:2%;">Listings for Zip Code:</h2>
+<div class="mapView">Map View
+    <label class="switch">
+        <input type="checkbox" checked>
+        <span class="slider round"></span>
+    </label>
+</div>
+<br>
 
 
-
-<h2>Listings:</h2>
-<div id="mapPosition">Map View
-                <label class="switch">
-                    <input type="checkbox" checked>
-                    <span class="slider round"></span>
-                </label>
-
-<div class="container">
-    <div class="row">
-        <div class="col-lg-6">
+<div class="container-fluid">
+    <div class="d-flex flex-row bd-highlight">
+        <div id="cardsContainer" class="card-deck col-lg-6" style='margin-left:.5%;'>
             {{#each listings}}
-            <div class="col-lg-7">
-                <div class='card-deck'>
-                    <div class='card' style='background-color:lightgrey;border:none'>
-                        <img class='card-img-top' src='{{this.img_url}}' alt='Card image cap'>
-                        <div class='card-body'>
-                            <div class='card-title'>
-                                <h2>{{this.title}}</h2>
-                                <h5>Location:{{this.city}}</h5>
-                            </div>
-                            <p class='card-text'>
-                                <h6>Price: ${{this.price}}</h6>
-                            </p>
-                            <p class='card-text'><small class='text-muted'>Category: {{this.category}}</small></p>
-                            <div style="text-align:center"><a href='' class='btn btn-primary'>View Listing</a></div>
-                        </div>
+            <div id="listingCards" class='card col-lg-6' style="margin-left: 1%; margin-bottom: 4%;">
+                <img class='card-img-top' src='{{this.img_url}}' alt='Card image cap'>
+                <div class='card-body'>
+                    <div class='card-title'>
+                        <h2>{{this.title}}</h2>
+                        <h5>Location:{{this.city}}</h5>
                     </div>
+                    <p class='card-text'>
+                        <h6>Price: ${{this.price}}</h6>
+                    </p>
+                    <p class='card-text'><small class='text-muted'>Category: {{this.category}}</small></p>
+                    <div style="text-align:center"><a href='' class='btn btn-primary'>View Listing</a><a class="favorites"><i class="far fa-heart fa-2x" style="float:right"></i></a></div>
                 </div>
-                <br>
-                <hr><br>
             </div>
             {{/each}}
-
         </div>
-        <div class="col-lg-6" style="position: -webkit-sticky; position: sticky;">
+        <div class="container-fluid">
+            <div id="mapImage" class="col-lg-6" style="margin-right: 1%;">
                 <span>
-                    <div id="mapImage">
-                        <div style="overflow:hidden;width: 700px;position: relative;">
-                            <iframe width="100%" height="800"
-                                src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=207%20wilkie%20Kaysville%2C%20ut%2084037+(Title)&amp;ie=UTF8&amp;t=&amp;z=10&amp;iwloc=B&amp;output=embed"
-                                frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                    <div>
+                        <div style="overflow:hidden;width: 270%; position: relative;">
+                            <iframe width="80%" height="800"
+                                src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=207%20Wilkie%20kaysville%2C%20ut%2084037+(Title)&amp;ie=UTF8&amp;t=&amp;z=10&amp;iwloc=B&amp;output=embed"
+                                frameborder="2" scrolling="no" marginheight="0" marginwidth="0"></iframe>
                             <div
-                                style="position: absolute;width: 80%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;">
+                                style="position: absolute;width: 100%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;">
                                 <small style="line-height: 1.8;font-size: 2px;background: #fff;">Powered by
                                     <a href="https://embedgooglemaps.com/de/">Embedgooglemaps.com/de/</a>
                                     <a href="https://and-route.com/at/">billiger mietwagen bezahlung</a>
@@ -78,12 +72,44 @@
     </div>
 </div>
 
+
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
 
 <script>
-    $("span").click(function () {
-        $("#mapImage").toggle();
+
+    window.onscroll = function() { myFunction() };
+
+    var mapImage = document.getElementById("mapImage");
+    var sticky = mapImage.offsetTop;
+
+    function myFunction() {
+        if (window.pageYOffset >= sticky) {
+            mapImage.classList.add("sticky")
+        } else {
+            mapImage.classList.remove("sticky");
+        }
+    }
+
+    $(document).ready(function() {
+        $("span").click(function() {
+            $("#mapImage").toggle();
+        });
+
+        var divs = $('.card');
+        for (var i = 0; i < divs.length; i += 2) {
+            divs.slice(i, i + 2).wrapAll('<div class="row"></div>');
+        }
+
+        $(".far").click(function() {
+            $(this).toggleClass('favorites');
+        });
+        
     });
+    
+
+
+
+
 </script>
