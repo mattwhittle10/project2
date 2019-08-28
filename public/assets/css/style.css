@@ -80,7 +80,12 @@ input:checked + .slider:before {
     margin: 25px;
 }
 
-.footer{
-    width: 100%;
-    
+/* listings page search  */
+.small-searchbar{
+    width: 40%;
+    float: right;
+    margin: 20px;
+}
+.zip-results{
+    margin: 20px;
 }
