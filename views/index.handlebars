@@ -21,18 +21,23 @@
 </div>
 
 <!-- SECOND HALF OF HOMEPAGE -->
-<div class="container">
-    <div class="row">
-        {{#each listings}}
-        {{#if available}}
-        <div class="card viewListingsCards wrapper" style="width: 18rem;">
-            <img class="card-img-top" src="{{this.img_url}}" alt="Property Image">
-            <div class="card-body">
-                <h5 class="card-title">{{this.title}}</h5>
-                <p class="card-text"><small class="text-muted">Price: ${{this.price}}/month</small></p>
-                <p class="card-text"><small class="text-muted">Category: {{this.category}}</small></p>
-                <p class="card-text"><small class="text-muted">Location: {{this.city}}, {{this.state}}</small></p>
-                <a href="#" id="viewListing" class="btn btn-primary">View Listing</a>
+
+      <div class="container">
+            <div class="row">
+                {{#each listings}}
+                {{#if available}}
+                <div class="card viewListingsCards wrapper" style="width: 18rem;">
+                    <img class="card-img-top" src="{{this.img_url}}" alt="Property Image">
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.title}}</h5>
+                        <p class="card-text"><small class="text-muted">Price: ${{this.price}}/month</small></p>
+                        <p class="card-text"><small class="text-muted">Category: {{this.category}}</small></p>
+                        <p class="card-text"><small class="text-muted">Location: {{this.city}}, {{this.state}}</small></p>
+                        <a href="/listings/{{this.product_id}}" id="{{this.product_id}}" class="btn btn-primary viewListing">View Listing</a>
+                    </div>
+                </div>
+                {{/if}}
+                {{/each}}
             </div>
         </div>
         {{/if}}

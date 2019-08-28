@@ -7,6 +7,17 @@ const listing = require('../models/storage');
       console.log(listings);
       res.render('listings', {user:req.user, listings});
     })
+  });
+
+
+    router.get("/:id", function (req, res) {
+      var id = req.params.id;
+      listing.indivListing(id,function(data){
+        var listing = data;
+        console.log(listing);
+        res.render('each-listing', {user:req.user, listing});
+      })
+    });
 
     // listing.listingsByZip(function(data){
     //   var hbsObject = {
@@ -17,6 +28,5 @@ const listing = require('../models/storage');
     // })
 
     
-  });
 
   module.exports = router;
