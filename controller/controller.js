@@ -10,11 +10,9 @@ router.get("/api/:id", function(req, res) {
   var id =req.params.id;
   console.log("id is :"+id);
   storage.all(id,function(data) {
-    var hbsObject = {
-      storages: data
-    };
-    console.log(hbsObject);
-    res.render("update", hbsObject);
+    var storages= data;
+    console.log(storages);
+    res.render("update", {user:req.user, storages}); //PLEASE SEND IN USER DATA USING {user:user.req.user}
   });
 });
 

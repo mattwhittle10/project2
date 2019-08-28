@@ -23,7 +23,7 @@ $('.profile-update').on("click", function(event){
     console.log(newUserData);
     //send the PUT request
     $.ajax({
-        url: "/api/customers/" + id,
+        url: "/profile/" + id,
         type: "PUT",
         data: newUserData
     }).then(function(data){

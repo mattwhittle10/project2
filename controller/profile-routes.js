@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const authroutes = require('./auth-routes');
 const listing = require('../models/storage');
+const customer = require('../models/customer');
 
 
 const authCheck = (req, res, next) => {
@@ -21,6 +22,17 @@ router.get('/', authCheck, (req, res) => {
         //send in a view here
         res.render('profile', {user:req.user, listings});   
     })
+});
+
+  //Update a user
+  router.put('/:id', function(req, res){
+    var userObj = req.body;
+    var condition = "customer_id =" + req.params.id;
+    customer.updateUser(userObj, condition, function(){
+      res.status(204).end();
+    });
+    // console.log(userObj, condition);
+
 });
 
 router.get('/update', (req, res) =>{
