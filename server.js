@@ -3,14 +3,14 @@ const passport = require('passport');
 const cookieSession = require('cookie-session');
 const dotenv = require('dotenv').config();
 
-const authRoutes = require('./routes/auth-routes');
-const profileRoutes = require('./routes/profile-routes');
-const listingRoutes = require('./routes/listingRoutes')
-const apiRoutes = require('./routes/apiRoutes');
-const passportSetup = require('./controller/passport-setup');
+const authRoutes = require('./controller/auth-routes');
+const profileRoutes = require('./controller/profile-routes');
+const listingRoutes = require('./controller/listingRoutes')
+const apiRoutes = require('./controller/apiRoutes');
+const passportSetup = require('./models/passport-setup');
 const keys = require('./config/keys');
 const listing = require('./models/storage');
-const routes = require("./controller/controller.js");
+// const routes = require("./controller/controller.js");
 
 const app = express();
 
@@ -44,7 +44,7 @@ app.use('/auth', authRoutes);
 app.use('/profile', profileRoutes);
 app.use('/listings', listingRoutes);
 app.use('/api', apiRoutes);
-app.use(routes);
+// app.use(routes);
 
 //create home route
 
