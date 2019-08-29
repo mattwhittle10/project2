@@ -1,8 +1,63 @@
-<h1>YOU MADE IT TO THE SPECIFIC LISTING PAGE</h1>
-{{#listing}}
+{{!-- {{#listing}}
 <h1>{{this.title}}</h1>
 <img src="{{this.img_url}}">
 <h4>{{this.address}}, {{this.city}}, {{this.state}}</h4>
 <h4>{{thiscategory}}</h4>
 <h4>{{this.description}}</h4>
-{{/listing}}
+{{/listing}} --}}
+
+<div class="container-fluid">
+    <div class="d-flex flex-row bd-highlight">
+        <div class="col-lg-6" style='margin-left:.5%;'>
+            {{#listing}}
+            <div class='col-lg-6' style="margin-left: 1%; margin-bottom: 4%;">
+                <img src='{{this.img_url}}' alt='Listing Image'>
+                <div>
+                    <div>
+                        <h2>{{this.title}}</h2>
+                        <h5>Location:{{this.city}}</h5>
+                    </div>
+                    <p>
+                        <h6>Price: ${{this.price}}</h6>
+                    </p>
+                    <p><small class='text-muted'>Category: {{this.category}}</small></p>
+                    <div style="text-align:center"><a href='/listings' class='btn btn-primary'
+                            id='{{this.product_id}}'>Go Back</a><a id="modalButton" class='btn btn-primary'
+                            id='{{this.product_id}}'>Book Listing</a><a class="favorites"><i class="far fa-heart fa-2x"
+                                style="float:right"></i></a></div>
+                </div>
+            </div>
+            {{/listing}}
+        </div>
+
+        <div class="container-fluid">
+            <div id="mapImage" class="col-lg-6" style="margin-right: 1%;">
+                <span>
+                    <div>
+                        <div style="overflow:hidden;width: 270%; position: relative;">
+                            <iframe width="80%" height="800"
+                                src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=207%20Wilkie%20kaysville%2C%20ut%2084037+(Title)&amp;ie=UTF8&amp;t=&amp;z=10&amp;iwloc=B&amp;output=embed"
+                                frameborder="2" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                            <div
+                                style="position: absolute;width: 100%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;">
+                                <small style="line-height: 1.8;font-size: 2px;background: #fff;">Powered by
+                                    <a href="https://embedgooglemaps.com/de/">Embedgooglemaps.com/de/</a>
+                                    <a href="https://and-route.com/at/">billiger mietwagen bezahlung</a>
+                                </small>
+                            </div>
+                            <style>
+                                #gmap_canvas img {
+                                    max-width: none !important;
+                                    background: none !important
+                                }
+                            </style>
+                        </div>
+                    </div>
+                </span>
+            </div>
+        </div>
+    </div>
+
+
+<script>
+</script>

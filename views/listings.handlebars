@@ -10,7 +10,7 @@
     </div>
 </div>
 
-<h2 style="margin-left:2%;">Listings for Zip Code:</h2>
+<h2 style="margin-left:2%;">Listings for Zip Code:{{listing.zip}}</h2>
 <div class="mapView">Map View
     <label class="switch">
         <input type="checkbox" checked>
@@ -20,20 +20,10 @@
 <br>
 
 
-<<<<<<< HEAD
 <div class="container-fluid">
     <div class="d-flex flex-row bd-highlight">
         <div id="cardsContainer" class="card-deck col-lg-6" style='margin-left:.5%;'>
-=======
-
-
-
-<h3 class="zip-results">Showing results for zipcode: XXXXX</h3>
-
-    <div class="row">
-        <div class="col-lg-6">
->>>>>>> b830b19e4f7abaa4d270612e3a96a059dce42290
-            {{#each listings}}
+            {{#each listing}}
             <div id="listingCards" class='card col-lg-6' style="margin-left: 1%; margin-bottom: 4%;">
                 <img class='card-img-top' src='{{this.img_url}}' alt='Card image cap'>
                 <div class='card-body'>
@@ -45,7 +35,7 @@
                         <h6>Price: ${{this.price}}</h6>
                     </p>
                     <p class='card-text'><small class='text-muted'>Category: {{this.category}}</small></p>
-                    <div style="text-align:center"><a href='' class='btn btn-primary'>View Listing</a><a class="favorites"><i class="far fa-heart fa-2x" style="float:right"></i></a></div>
+                    <div style="text-align:center"><a href='profile/listing/{{this.product_id}}' class='btn btn-primary' id='{{this.product_id}}'>View Listing</a><a class="favorites"><i class="far fa-heart fa-2x" style="float:right"></i></a></div>
                 </div>
             </div>
             {{/each}}

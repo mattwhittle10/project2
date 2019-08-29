@@ -80,7 +80,6 @@ input:checked + .slider:before {
     margin: 25px;
 }
 
-<<<<<<< HEAD
 .sticky {
     position: fixed;
     top: 2%;
@@ -95,7 +94,6 @@ input:checked + .slider:before {
     color: red;
 }
 
-=======
 /* listings page search  */
 .small-searchbar{
     width: 40%;
@@ -105,4 +103,3 @@ input:checked + .slider:before {
 .zip-results{
     margin: 20px;
 }
->>>>>>> b830b19e4f7abaa4d270612e3a96a059dce42290
