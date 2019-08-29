@@ -19,14 +19,14 @@ const listing = require('../models/storage');
       })
     });
 
-    // listing.listingsByZip(function(data){
-    //   var hbsObject = {
-    //     listings: data
-    //   }
-    //   console.log(hbsObject);
-    //   res.render("listings", hbsObject);
-    // })
-
+    router.get("/:zipVal", function (req, res) {
+      var zipVal = req.params.zipVal;
+      console.log(zipVal);
+      listing.listingsByZip(zipVal, function(data){
+        var listing = data;
+        res.render('listings', listing);
+      })
+    });
     
 
   module.exports = router;

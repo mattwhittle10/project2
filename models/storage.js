@@ -6,8 +6,8 @@ var listing = {
             cb(res);
         });
     },
-    listingsByZip: function (cb) {
-        orm.listingsByZip("products", "zipcode", zipcodeInput, function (res) {
+    listingsByZip: function (zipVal, cb) {
+        orm.listingsByZip("products", "zip", zipVal, function (res) {
             cb(res);
         });
 
