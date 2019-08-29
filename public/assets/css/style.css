@@ -69,6 +69,9 @@ input:checked + .slider:before {
     height: auto;
 };
 
+
+/* update user information page  */
+
 /* styling the cards */
 .wrapper{
     display: grid;
