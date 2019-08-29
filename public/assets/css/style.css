@@ -83,6 +83,20 @@ input:checked + .slider:before {
     margin: 25px;
 }
 
+.sticky {
+    position: fixed;
+    top: 2%;
+    width: 23.7%;
+}
+
+.mapView {
+    margin-left: 88%;
+}
+
+.favorites {
+    color: red;
+}
+
 /* listings page search  */
 .small-searchbar{
     width: 40%;

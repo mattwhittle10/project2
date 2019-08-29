@@ -126,6 +126,16 @@ var orm = {
     });
   },
 
+  listingsByZip: function (tableInput, colToSearch, valOfCol, cb) {
+    var queryString = "SELECT * FROM ?? WHERE ?? = ?";
+    console.log(queryString);
+    connection.query(queryString, [tableInput, colToSearch, valOfCol], function (err, result) {
+      if (err) throw err;
+      console.log(result);
+      cb(result);
+    });
+  }
+
   // indivListing: function(table, col, condition, cb){
   //   var queryString = "SELECT * FROM ?? WHERE ?? =?";
   //   connection.query(queryString, [table, col, condition], function (err, result) {
