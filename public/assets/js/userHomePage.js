@@ -22,3 +22,19 @@ $('.viewListing').on("click", function(){
 
         });
 });
+
+
+//this is the ON CLICK for the create listing button
+// $('.createListing').on("click", function(){
+//     var id = $(this).attr('id');
+    
+//         //send the GET request
+//         $.ajax({
+//             url: "/create/",
+//             type: "GET",
+//         }).then(function(data){
+
+//         });
+// });
+
+

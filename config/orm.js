@@ -125,16 +125,6 @@ var orm = {
       cb(result);
     });
   },
-
-  // indivListing: function(table, col, condition, cb){
-  //   var queryString = "SELECT * FROM ?? WHERE ?? =?";
-  //   connection.query(queryString, [table, col, condition], function (err, result) {
-  //     if (err) {
-  //       throw err;
-  //     }
-  //     cb(result);
-  //   });
-  // },
 };
 
 module.exports = orm;

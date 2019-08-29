@@ -41,7 +41,14 @@ var listing = {
         orm.selectWhere("products", "product_id", condition, function(res){
           cb(res);
         });
-      }
+      },
+
+      // //create listing (NATE MADE THIS --- I THINK SWARADA MADE THIS)
+      // createListing: function(condition, cb){
+      //   orm.createListing("", "", condition, function(res){
+      //     cb(res);
+      //   });
+      // }
 };
 
 module.exports = listing;

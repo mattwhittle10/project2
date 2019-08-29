@@ -19,6 +19,11 @@ const listing = require('../models/storage');
       })
     });
 
+    // //add ID
+    // router.create("/create/", function (req, res) {
+    //     res.render('SWARADA PAGE', {user:req.user});
+    // });
+
     // listing.listingsByZip(function(data){
     //   var hbsObject = {
     //     listings: data

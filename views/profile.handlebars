@@ -1,5 +1,5 @@
 <div>
-    <h1 class="display-4">Welcome, {{user.first_name}}</h1>
+    <h1 class="display-4">Welcome, {{user.first_name}} {{user.last_name}}</h1>
     {{!-- <a class="btn btn-primary" href="/profile/update" role="button">Update Pofile</a>
     <a class="btn btn-primary" href="#" role="button">Post a Listing</a> --}}
 </div>
@@ -10,7 +10,7 @@
 <div class="container">
     <div class="row justify-content-md-center">
         <div class="col col-lg-2">
-            <a href="#"><img src="assets/images/postHome.png" class="usericon" title="Post a Listing"
+            <a href="/create/"><img src="assets/images/postHome.png" id="createListing" class="usericon" title="Create a Listing"
                     alt="New Listing"></a>
         </div>
         <div class="col-md-auto">
