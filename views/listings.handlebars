@@ -1,14 +1,11 @@
-<div class="jumbotron jumbotron-fluid">
-    <div class="container">
-        <h1 class="display-4">Hoarder Helper</h1>
-        <!-- SEARCH BAR -->
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Enter a Zip Code" aria-label="zipcode"
-                aria-describedby="button-addon2">
-            <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search for
-                    Storage</button>
-            </div>
+<!-- SEARCH BAR -->
+<div class="container small-searchbar">
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Enter a Zip Code" aria-label="zipcode"
+            aria-describedby="button-addon2">
+        <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search for
+                Storage</button>
         </div>
     </div>
 </div>
@@ -23,9 +20,19 @@
 <br>
 
 
+<<<<<<< HEAD
 <div class="container-fluid">
     <div class="d-flex flex-row bd-highlight">
         <div id="cardsContainer" class="card-deck col-lg-6" style='margin-left:.5%;'>
+=======
+
+
+
+<h3 class="zip-results">Showing results for zipcode: XXXXX</h3>
+
+    <div class="row">
+        <div class="col-lg-6">
+>>>>>>> b830b19e4f7abaa4d270612e3a96a059dce42290
             {{#each listings}}
             <div id="listingCards" class='card col-lg-6' style="margin-left: 1%; margin-bottom: 4%;">
                 <img class='card-img-top' src='{{this.img_url}}' alt='Card image cap'>
@@ -70,7 +77,6 @@
             </div>
         </div>
     </div>
-</div>
 
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

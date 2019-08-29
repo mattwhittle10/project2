@@ -36,7 +36,7 @@
                         <p class="card-text"><small class="text-muted">Price: ${{this.price}}/month</small></p>
                         <p class="card-text"><small class="text-muted">Category: {{this.category}}</small></p>
                         <p class="card-text"><small class="text-muted">Location: {{this.city}}, {{this.state}}</small></p>
-                         <div class ="text-center" style="item-align:center"><a href='' class='btn btn-primary'>View Listing</a></div>
+                         <div class ="text-center" style="item-align:center"><div class ="text-center" style="item-align:center"><a href="profile/listing/{{this.product_id}}" id="{{this.product_id}}" class="btn btn-primary viewListing">View Listing</a></div></div>
                     </div>
                 </div>
                 {{/each}}
@@ -63,18 +63,11 @@
                             <p class="card-text"><small class="text-muted">Category: {{this.category}}</small></p>
                             <p class="card-text"><small class="text-muted">Location: {{this.city}},
                                     {{this.state}}</small></p>
-                            <div class ="text-center" style="item-align:center"><a href='' class='btn btn-primary'>View Listing</a></div>
+                            <div class ="text-center" style="item-align:center"><a href='/api/{{this.product_id}}' class='btn btn-primary userlisting' id='{{this.product_id}}'>View Listing</a></div>
                         </div>
                     </div>
                     {{/if}}
                     {{/each}}
                 </div>
-            </div>
-        </div>
-
-        <!-- Footer -->
-        <div class="card fixed-bottom">
-            <div class="card-footer"></div>
-            <div class="card-body">
             </div>
         </div>

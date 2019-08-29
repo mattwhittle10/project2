@@ -7,7 +7,6 @@ $('.profile-update').on("click", function(event){
     var last = $('#lastname').val();
     var email = $('#email').val();
     var phone = $('#phone').val();
-    var photo = $('#thumbnail').val();
 
     var newUserData = {
         customer_id: id, 
@@ -16,11 +15,7 @@ $('.profile-update').on("click", function(event){
         username: username,
         email_address: email,
         phone_number: phone,
-        thumbnail: photo
     };
-
-    console.log(username, first, last, email, phone, photo);
-    console.log(newUserData);
     //send the PUT request
     $.ajax({
         url: "/api/customers/" + id,

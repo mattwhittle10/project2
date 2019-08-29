@@ -7,7 +7,7 @@ first_name  VARCHAR(45) NOT NULL,
 last_name  VARCHAR(45) NOT NULL,
 username VARCHAR(45),
 email_address VARCHAR(75),
-phone_number   VARCHAR(11),
+phone_number   VARCHAR(20),
 host_rating INTEGER NOT NULL DEFAULT 0,
 first_time_login BOOLEAN NOT NULL DEFAULT TRUE,
 google_id VARCHAR (255),
@@ -32,17 +32,23 @@ PRIMARY KEY(product_id),
 FOREIGN KEY (customer_id) REFERENCES customers(customer_id) ON DELETE CASCADE
 );
 
--- ***alternative idea instead of type***
-
--- indoor BOOLEAN DEFAULT false,
--- secure BOOLEAN DEFAULT false, 
--- full_time_access BOOLEAN DEFAULT false, 
--- monitored BOOLEAN DEFAULT false, 
---temp_controlled BOOLENA DEFAULT false
-
--- # of trues /5 would be their listings rating. 
--- all of these need be be true to get a 5 star listing.
--- add these options when making the add-property form.
+CREATE TABLE products_archive (
+product_id INTEGER AUTO_INCREMENT NOT NULL,
+title VARCHAR(60) NOT NULL,
+img_url VARCHAR(300) NOT NULL,
+address VARCHAR(30) NOT NULL,
+city varchar(20) NOT NULL,
+state varchar(2) NOT NULL,
+zip int(10)NOT NULL,
+available BOOLEAN NOT NULL DEFAULT TRUE,
+price INTEGER(5) NOT NULL,
+category VARCHAR (30) NOT NULL,
+secure BOOLEAN NOT NULL,
+description VARCHAR(250) NOT NULL,
+customer_id  INTEGER ,
+PRIMARY KEY(product_id),
+FOREIGN KEY (customer_id) REFERENCES customers(customer_id) ON DELETE CASCADE
+);
 
 
 

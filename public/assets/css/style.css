@@ -1,5 +1,4 @@
 body{
-    height: 1000px;
 }
 h2 {
     text-align: left;
@@ -68,7 +67,6 @@ input:checked + .slider:before {
 .usericon{
     width: 60px;
     height: auto;
-
 };
 
 /* styling the cards */
@@ -82,6 +80,7 @@ input:checked + .slider:before {
     margin: 25px;
 }
 
+<<<<<<< HEAD
 .sticky {
     position: fixed;
     top: 2%;
@@ -96,3 +95,14 @@ input:checked + .slider:before {
     color: red;
 }
 
+=======
+/* listings page search  */
+.small-searchbar{
+    width: 40%;
+    float: right;
+    margin: 20px;
+}
+.zip-results{
+    margin: 20px;
+}
+>>>>>>> b830b19e4f7abaa4d270612e3a96a059dce42290
