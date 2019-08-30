@@ -21,6 +21,16 @@
                         <h6>Price: ${{this.price}}</h6>
                     </p>
                     <p><small class='text-muted'>Category: {{this.category}}</small></p>
+
+                    {{!-- put calendar here!!! --}}
+                    <div class="some-div">
+                        <h5>Choose Storage Dates:</h5>
+                        <div id="calendar" class="dycalendar-container">
+
+                        </div>
+                    </div>
+                    {{!-- end of calendar --}}
+
                     <div style="text-align:center"><a href='/listings' class='btn btn-primary'
                             id='{{this.product_id}}'>Go Back</a><a id="modalButton" class='btn btn-primary'
                             id='{{this.product_id}}'>Book Listing</a><a class="favorites"><i class="far fa-heart fa-2x"
@@ -28,6 +38,9 @@
                 </div>
             </div>
             {{/listing}}
+
+
+
         </div>
 
         <div class="container-fluid">
@@ -59,5 +72,5 @@
     </div>
 
 
-<script>
-</script>
+    <script>
+    </script>
