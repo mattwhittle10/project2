@@ -42,6 +42,7 @@ $(function () {
                             // Reload the page to get the updated list
                             console.log(image.imageUrl);
                             insertIntoTable(image.imageUrl);
+                            location.reload();
                         }
                     );
 
@@ -81,7 +82,7 @@ function insertIntoTable(image) {
         category: $("#category").val(),
         secure: secureVar,
         description: $("#description").val(),
-        customer_id: "1"
+        customer_id: $("#customerId").val()
     }
     
 

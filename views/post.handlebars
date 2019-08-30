@@ -1,5 +1,7 @@
 {{!-- <div class="wrapper">
     <div class="jumbotron" style="background-color: white "> --}}
+        
+        
 <div class="container">
     <div class="row">
         <div class="col-md-4">
@@ -103,11 +105,15 @@
                         Please provide a valid Description.
                     </div>
                 </div><br>
-                <button id="submit" type="submit" class="btn btn-primary" style="background-color: grey">Submit</button>
+                <div class="form-group">
+                    <input id="customerId" type="number" class="form-control" value={{user.customer_id}} placeholder="customer_id" readonly style="display:none ">
+                </div>
+                <button id="submit"  type="submit" class="btn btn-primary" style="background-color: grey">Submit</button>
                 <button id="cancel" type="cancel" class="btn btn-primary" style="background-color: grey">Cancel</button>
             </form>
         </div>
     </div>
-</div>    
+</div>   
+{{!-- {{/each}}  --}}
 {{!-- </div>
 </div> --}}
