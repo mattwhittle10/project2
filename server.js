@@ -10,6 +10,7 @@ const apiRoutes = require('./controller/apiRoutes');
 const passportSetup = require('./models/passport-setup');
 const keys = require('./config/keys');
 const listing = require('./models/storage');
+const awsRoutes = require ("./controller/file_upload");
 
 const app = express();
 
@@ -43,7 +44,7 @@ app.use('/auth', authRoutes);
 app.use('/profile', profileRoutes);
 app.use('/listings', listingRoutes);
 app.use('/api', apiRoutes);
-
+app.use(awsRoutes);
 
 //create home route
 

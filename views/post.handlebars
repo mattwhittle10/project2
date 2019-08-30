@@ -1,0 +1,113 @@
+{{!-- <div class="wrapper">
+    <div class="jumbotron" style="background-color: white "> --}}
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="" alt="display_img" style="width:200px; height:200px">
+        </div>
+        <div class="col-md-8">
+            <form id="usrform" class="needs-validation" novalidate action="/api/storage/post" method="POST">
+                <div class="form-group">
+                    <label for="validationCustom01">Title :</label>
+                    <input id="title" type="text" class="form-control" placeholder="title" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please provide a valid Title.
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label for="validationCustom01">Address :</label>
+                    <input id="address" type="text" class="form-control" placeholder="address" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please provide a valid Address.
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label for="validationCustom03">City :</label>
+                    <input id="city" type="text" class="form-control" placeholder="city" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please provide a valid city.
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label for="validationCustom01">State :</label>
+                    <input id="state" type="text" class="form-control" placeholder="state" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please provide a valid State.
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label for="validationCustom01">Zip Code :</label>
+                    <input id="zip" type="number" class="form-control" placeholder="zip" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please provide a valid Zip Code.
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label for="validationCustom01">Category :</label>
+                    <select id="category">
+                        <option value="mostSecured">MostSecured</option>
+                        <option value="moreSecured">MoreSecured</option>
+                        <option value="secured">Secured</option>
+                        <option value="open">Open</option>
+                    </select>
+                </div><br>
+                <div class="form-group">
+                    <label for="validationCustom01">Secure :</label>
+                    <select id="secure">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                </div><br>
+                <div class="form-group">
+                    <label for="validationCustom01">Price :</label>
+                    <input id="price" type="number" class="form-control" placeholder="price" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please provide a valid Number.
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label for="validationCustom01">Image_url :</label>
+                    <input id="img_url" type="file" class="form-control" placeholder="img_url" required>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please provide a valid URL.
+                    </div>
+                </div><br>
+                <div class="form-group">
+                    <label for="validationCustom01">Description :</label>
+                    <textarea id="description" class="form-control" rows="5" required></textarea>
+                    <div class="valid-feedback">
+                        Looks good!
+                    </div>
+                    <div class="invalid-feedback">
+                        Please provide a valid Description.
+                    </div>
+                </div><br>
+                <button id="submit" type="submit" class="btn btn-primary" style="background-color: grey">Submit</button>
+                <button id="cancel" type="cancel" class="btn btn-primary" style="background-color: grey">Cancel</button>
+            </form>
+        </div>
+    </div>
+</div>    
+{{!-- </div>
+</div> --}}
