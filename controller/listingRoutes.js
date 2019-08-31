@@ -14,7 +14,6 @@ const listing = require('../models/storage');
       var id = req.params.id;
       listing.indivListing(id,function(data){
         var listing = data;
-        console.log(listing);
         res.render('each-listing', {user:req.user, listing});
       })
     });
