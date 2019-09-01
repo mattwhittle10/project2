@@ -1,4 +1,4 @@
 $('.date-input').dateDropper({
     roundtrip: true,
-    defaultDate: '12/31/2019'
+    disabledDays: "08/30/2019"
 });
