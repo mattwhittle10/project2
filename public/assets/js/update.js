@@ -25,6 +25,10 @@ $(function () {
         var id = $(this).data("product_id");
         var price = $("#newprice").val();
 
+        if(price === ""){
+         alert("Please enter a valid Price");
+        }
+        else{
         var newPrice = {
             price: price
         };
@@ -41,6 +45,7 @@ $(function () {
                 location.reload();
             }
         );
+        }
 
     });
 
@@ -57,16 +62,16 @@ $(function () {
           function() {
             console.log("record deleted", id);
             // Reload the page to get the updated list
-            //location.reload();
+            location.reload();
           }
         );
       });
 
     
 
-    $('#cancle').on('click', function (event) {
+    $('#cancel').on('click', function (event) {
         event.preventDefault();
-        console.log("inside cancle click");
+        console.log("inside cancel click");
         location.reload();   
     });
 

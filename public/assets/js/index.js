@@ -9,3 +9,14 @@ $('.viewListing').on("click", function(){
 
         });
 });
+
+$('#searchBtn').on("click", function() {
+    var zip = $('.zipCodeVal').val();
+    console.log(zip);
+    $.ajax({
+        url: "/listings/" + zip,
+        type: "GET",
+    }).then(function(data) {
+        console.log(data);
+    });
+});

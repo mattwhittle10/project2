@@ -7,7 +7,6 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-	<!-- Bootstrap CSS -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -16,19 +15,22 @@
 	<script src="https://kit.fontawesome.com/e6979a7c66.js"></script>
 
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<<<<<<< HEAD
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+=======
+>>>>>>> a698ca66a6515b28f88fdf76261a2e36a7d605e1
 
 </head>
 
-  <!--External CSS-->
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-	  .gmailicon{
-		  width:40px;
-		  height: auto;
-	  }
-  </style>
+<!--External CSS-->
+<link rel="stylesheet" href="/assets/css/style.css">
+<style>
+	.gmailicon {
+		width: 40px;
+		height: auto;
+	}
+</style>
 
 <body>
 	<!-- TOP NAV -->
@@ -52,11 +54,11 @@
 					<a class="nav-link" href="/auth/google">Sign In with Google+</a>
 				</li>
 				{{/if}}
-        {{#if user}}
+				{{#if user}}
 				<li class="nav-item">
 					<a class="nav-link" href="/profile">Profile</a>
 				</li>
-        {{/if}}
+				{{/if}}
 				{{#if user}}
 				<img src='{{user.thumbnail}}' class="rounded-circle float-right gmailicon" alt="profile picture">
 				{{/if}}
@@ -67,13 +69,31 @@
 	{{{ body }}}
 
 
+
+<!-- Footer -->
+{{!-- <div class="card footer">
+    <div class="card-footer">
+        Real User's Comments
+    </div>
+    <div class="card-body">
+        <blockquote class="blockquote mb-0">
+            <p>The site was so easy to use!</p>
+            <footer class="blockquote-footer">The best in it's class - HANDS DOWN. <cite title="Source Title">Jonathan
+                    Bae Jerano</cite>
+            </footer>
+        </blockquote>
+    </div>
+</div> --}}
+
 	<!-- Optional JavaScript -->
 		<!--External Javascript files-->
 	{{!-- <script src="/assets/js/post.js"></script> --}}
 	<script src="/assets/js/update.js"></script>
+	<script src="/assets/js/post.js"></script>
 	<script src="/assets/js/update-profile.js"></script>
 	<script src="/assets/js/userHomePage.js"></script>
 	<script src="/assets/js/index.js"></script>
+	<script src="/assets/js/listings.js"></script>
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"

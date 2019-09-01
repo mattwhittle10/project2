@@ -1,6 +1,7 @@
 DROP DATABASE IF EXISTS storage_db;
 CREATE DATABASE storage_db;
 USE storage_db;
+
 CREATE TABLE customers (
 customer_id  INTEGER NOT NULL AUTO_INCREMENT,
 first_name  VARCHAR(45) NOT NULL,
@@ -14,6 +15,7 @@ google_id VARCHAR (255),
 thumbnail VARCHAR(255),
 PRIMARY KEY (customer_id)
 );
+
 CREATE TABLE products (
 product_id INTEGER AUTO_INCREMENT NOT NULL,
 title VARCHAR(60) NOT NULL,
@@ -33,7 +35,7 @@ FOREIGN KEY (customer_id) REFERENCES customers(customer_id) ON DELETE CASCADE
 );
 
 CREATE TABLE products_archive (
-product_id INTEGER AUTO_INCREMENT NOT NULL,
+product_id INTEGER NOT NULL,
 title VARCHAR(60) NOT NULL,
 img_url VARCHAR(300) NOT NULL,
 address VARCHAR(30) NOT NULL,
@@ -46,8 +48,6 @@ category VARCHAR (30) NOT NULL,
 secure BOOLEAN NOT NULL,
 description VARCHAR(250) NOT NULL,
 customer_id  INTEGER ,
-PRIMARY KEY(product_id),
-FOREIGN KEY (customer_id) REFERENCES customers(customer_id) ON DELETE CASCADE
 );
 
 
