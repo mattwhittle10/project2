@@ -1,6 +1,7 @@
 var orm = require('../config/orm');
 
 var listing = {
+
   allListings: function (cb) {
     orm.allListings("products", function (res) {
       cb(res);
@@ -37,6 +38,7 @@ var listing = {
       cb(res);
     });
   }
+
 };
 
 module.exports = listing;
