@@ -8,52 +8,38 @@
         <br>
         <!-- SEARCH BAR -->
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Enter a Zip Code" aria-label="zipcode"
+            <input type="text" id="zipCodeVal" class="form-control" placeholder="Enter a Zip Code" aria-label="zipcode"
                 aria-describedby="button-addon2">
-            <div class="input-group-append">
 
-                <a href="/listings">
-                    <btn "btn-outline-secondary" type="button" id="button-addon2">Search for Storage</button>
+            <div class="input-group-append">
+                <a href='' onclick="this.href='listings/'+document.getElementById('zipCodeVal').value" id="searchVal">
+                    <button id="searchBtn" class="btn btn-outline-secondary" type="button">Search for
+                        Storage</button>
                 </a>
             </div>
+
         </div>
     </div>
 </div>
 
 <!-- SECOND HALF OF HOMEPAGE -->
-      <div class="container">
-            <div class="row">
-                {{#each listings}}
-                {{#if available}}
-                <div class="card viewListingsCards wrapper" style="width: 18rem;">
-                    <img class="card-img-top" src="{{this.img_url}}" alt="Property Image">
-                    <div class="card-body">
-                        <h5 class="card-title">{{this.title}}</h5>
-                        <p class="card-text"><small class="text-muted">Price: ${{this.price}}/month</small></p>
-                        <p class="card-text"><small class="text-muted">Category: {{this.category}}</small></p>
-                        <p class="card-text"><small class="text-muted">Location: {{this.city}}, {{this.state}}</small></p>
-                        <a href="#" id= "viewListing" class="btn btn-primary">View Listing</a>
-                    </div>
-                </div>
-                {{/if}}
-                {{/each}}
+
+<div class="container">
+    <div class="row">
+        {{#each listings}}
+        {{#if available}}
+        <div class="card viewListingsCards wrapper" style="width: 18rem;">
+            <img class="card-img-top" src="{{this.img_url}}" alt="Property Image">
+            <div class="card-body">
+                <h5 class="card-title">{{this.title}}</h5>
+                <p class="card-text"><small class="text-muted">Price: ${{this.price}}/month</small></p>
+                <p class="card-text"><small class="text-muted">Category: {{this.category}}</small></p>
+                <p class="card-text"><small class="text-muted">Location: {{this.city}}, {{this.state}}</small></p>
+                <a href="/profile/listing/{{this.product_id}}" id="{{this.product_id}}"
+                    class="btn btn-primary viewListing">View Listing</a>
             </div>
         </div>
-
-
-<!-- Footer -->
-<div class="card">
-    <div class="card-footer">
-        Real User's Comments
-    </div>
-    <div class="card-body">
-        <blockquote class="blockquote mb-0">
-            <p>The site was so easy to use!</p>
-            <footer class="blockquote-footer">The best in it's class - HANDS DOWN. <cite title="Source Title">Jonathan
-                    Bae Jerano</cite>
-            </footer>
-        </blockquote>
+        {{/if}}
+        {{/each}}
     </div>
 </div>
-
-

@@ -1,50 +1,35 @@
-<!-- SEARCH BAR -->
-<div class="container small-searchbar">
-    <div class="input-group mb-3">
-        <input type="text" id="zipCodeVal" class="form-control" placeholder="Enter a Zip Code" aria-label="zipcode"
-            aria-describedby="button-addon2" />
-        <div class="input-group-append">
-
-            <a href='' onclick="this.href=''+document.getElementById('zipCodeVal').value" id="searchVal">
-                <button id="searchBtn" class="btn btn-outline-secondary" type="button">Search for
-                    Storage</button>
-            </a>
-        </div>
-    </div>
-</div>
-
-<h2 style="margin-left:2%;">Listings for Zip Code:</h2>
-<div class="mapView">Map View
-    <label class="switch">
-        <input type="checkbox" checked>
-        <span class="slider round"></span>
-    </label>
-</div>
-<br>
-
+{{!-- {{#listing}}
+<h1>{{this.title}}</h1>
+<img src="{{this.img_url}}">
+<h4>{{this.address}}, {{this.city}}, {{this.state}}</h4>
+<h4>{{thiscategory}}</h4>
+<h4>{{this.description}}</h4>
+{{/listing}} --}}
 
 <div class="container-fluid">
     <div class="d-flex flex-row bd-highlight">
-        <div id="cardsContainer" class="card-deck col-lg-6" style='margin-left:.5%;'>
-            {{#each listings}}
-            <div id="listingCards" class='card col-lg-6' style="margin-left: 1%; margin-bottom: 4%;">
-                <img class='card-img-top' src='{{this.img_url}}' alt='Card image cap'>
-                <div class='card-body'>
-                    <div class='card-title'>
+        <div class="col-lg-6" style='margin-left:.5%;'>
+            {{#listing}}
+            <div class='col-lg-6' style="margin-left: 1%; margin-bottom: 4%;">
+                <img src='{{this.img_url}}' alt='Listing Image'>
+                <div>
+                    <div>
                         <h2>{{this.title}}</h2>
                         <h5>Location:{{this.city}}</h5>
                     </div>
-                    <p class='card-text'>
+                    <p>
                         <h6>Price: ${{this.price}}</h6>
                     </p>
-                    <p class='card-text'><small class='text-muted'>Category: {{this.category}}</small></p>
-                    <div style="text-align:center"><a href='../profile/listing/{{this.product_id}}'
-                            class='btn btn-primary'>View Listing</a><a class="favorites"><i class="far fa-heart fa-2x"
+                    <p><small class='text-muted'>Category: {{this.category}}</small></p>
+                    <div style="text-align:center"><a href='/listings' class='btn btn-primary'
+                            id='{{this.product_id}}'>Go Back</a><a id="modalButton" class='btn btn-primary'
+                            id='{{this.product_id}}'>Book Listing</a><a class="favorites"><i class="far fa-heart fa-2x"
                                 style="float:right"></i></a></div>
                 </div>
             </div>
-            {{/each}}
+            {{/listing}}
         </div>
+
         <div class="container-fluid">
             <div id="mapImage" class="col-lg-6" style="margin-right: 1%;">
                 <span>
@@ -72,3 +57,7 @@
             </div>
         </div>
     </div>
+
+
+<script>
+</script>

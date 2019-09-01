@@ -13,6 +13,29 @@ router.get("/:id", function(req, res) {
   });
 });
 
+router.get("/storage/post", function(req, res) {
+  // listing.one(function(data) {
+  //   var hbsObject = {
+  //     storages: data
+  //   };
+  var id = parseInt(req.user.customer_id);
+    res.render("post",  {user:req.user, id});
+  });
+// });
+
+router.post("/storage/post", function(req, res) {
+  console.log(req.body.title, req.body.img_url, req.body.address,req.body.city,req.body.state,req.body.zip, req.body.available, req.body.price, req.body.category, req.body.secure, req.body.description,req.body.customer_id);
+  listing.create([
+    "title", "img_url", "address","city","state","zip","available", "price", "category", "secure", "description","customer_id"
+  ], [
+    req.body.title, req.body.img_url, req.body.address,req.body.city,req.body.state,req.body.zip, req.body.available, req.body.price, req.body.category, req.body.secure, req.body.description,req.body.customer_id
+  ], function(result) {
+    // Send back the ID of the new quote
+    //res.json({ id: result.insertId });
+    res.redirect("/storage/post");
+  });
+});
+
 router.put("/storage/:id", function(req, res) {
   var condition =req.params.id;
   console.log(condition,req.body.price);

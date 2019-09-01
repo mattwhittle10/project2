@@ -1,6 +1,7 @@
 DROP DATABASE IF EXISTS storage_db;
 CREATE DATABASE storage_db;
 USE storage_db;
+
 CREATE TABLE customers (
 customer_id  INTEGER NOT NULL AUTO_INCREMENT,
 first_name  VARCHAR(45) NOT NULL,
@@ -14,6 +15,7 @@ google_id VARCHAR (255),
 thumbnail VARCHAR(255),
 PRIMARY KEY (customer_id)
 );
+
 CREATE TABLE products (
 product_id INTEGER AUTO_INCREMENT NOT NULL,
 title VARCHAR(60) NOT NULL,
@@ -32,17 +34,21 @@ PRIMARY KEY(product_id),
 FOREIGN KEY (customer_id) REFERENCES customers(customer_id) ON DELETE CASCADE
 );
 
--- ***alternative idea instead of type***
-
--- indoor BOOLEAN DEFAULT false,
--- secure BOOLEAN DEFAULT false, 
--- full_time_access BOOLEAN DEFAULT false, 
--- monitored BOOLEAN DEFAULT false, 
---temp_controlled BOOLENA DEFAULT false
-
--- # of trues /5 would be their listings rating. 
--- all of these need be be true to get a 5 star listing.
--- add these options when making the add-property form.
+CREATE TABLE products_archive (
+product_id INTEGER NOT NULL,
+title VARCHAR(60) NOT NULL,
+img_url VARCHAR(300) NOT NULL,
+address VARCHAR(30) NOT NULL,
+city varchar(20) NOT NULL,
+state varchar(2) NOT NULL,
+zip int(10)NOT NULL,
+available BOOLEAN NOT NULL DEFAULT TRUE,
+price INTEGER(5) NOT NULL,
+category VARCHAR (30) NOT NULL,
+secure BOOLEAN NOT NULL,
+description VARCHAR(250) NOT NULL,
+customer_id  INTEGER ,
+);
 
 
 
