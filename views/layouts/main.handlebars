@@ -16,17 +16,21 @@
 
 	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<<<<<<< HEAD
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+=======
+>>>>>>> a698ca66a6515b28f88fdf76261a2e36a7d605e1
 
 </head>
 
-  <!--External CSS-->
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <style>
-	  .gmailicon{
-		  width:40px;
-		  height: auto;
-	  }
-  </style>
+<!--External CSS-->
+<link rel="stylesheet" href="/assets/css/style.css">
+<style>
+	.gmailicon {
+		width: 40px;
+		height: auto;
+	}
+</style>
 
 <body>
 	<!-- TOP NAV -->
@@ -50,11 +54,11 @@
 					<a class="nav-link" href="/auth/google">Sign In with Google+</a>
 				</li>
 				{{/if}}
-        {{#if user}}
+				{{#if user}}
 				<li class="nav-item">
 					<a class="nav-link" href="/profile">Profile</a>
 				</li>
-        {{/if}}
+				{{/if}}
 				{{#if user}}
 				<img src='{{user.thumbnail}}' class="rounded-circle float-right gmailicon" alt="profile picture">
 				{{/if}}

@@ -143,7 +143,18 @@ var orm = {
       cb(result);
     });
   },
-  
+
+  listingsByZip: function (table, col, condition) {
+
+    var queryString = "SELECT * FROM ?? WHERE ?? = ?";
+    connection.query(queryString, [table, col, condition], function (err, result) {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
+  },
+
   indivListing: function (table, col, condition, cb) {
     var queryString = "SELECT * FROM ?? WHERE ?? =?";
     connection.query(queryString, [table, col, condition], function (err, result) {
@@ -153,6 +164,7 @@ var orm = {
       cb(result);
     });
   }
+
 };
 
 module.exports = orm;

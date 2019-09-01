@@ -10,7 +10,11 @@ const apiRoutes = require('./controller/apiRoutes');
 const passportSetup = require('./models/passport-setup');
 const keys = require('./config/keys');
 const listing = require('./models/storage');
+<<<<<<< HEAD
+// const routes = require("./controller/controller.js");
+=======
 const awsRoutes = require ("./controller/file_upload");
+>>>>>>> a698ca66a6515b28f88fdf76261a2e36a7d605e1
 
 const app = express();
 
@@ -44,7 +48,11 @@ app.use('/auth', authRoutes);
 app.use('/profile', profileRoutes);
 app.use('/listings', listingRoutes);
 app.use('/api', apiRoutes);
+<<<<<<< HEAD
+// app.use(routes);
+=======
 app.use(awsRoutes);
+>>>>>>> a698ca66a6515b28f88fdf76261a2e36a7d605e1
 
 //create home route
 
