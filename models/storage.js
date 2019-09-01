@@ -18,6 +18,17 @@ var listing = {
       cb(res);
     });
   },
+  one: function(cb){
+    orm.one("products", function(res) {
+     cb(res);
+    });
+  },
+
+  create: function(cols, vals, cb) {
+    orm.create("products", cols, vals, function(res) {
+      cb(res);
+    });
+  },
   update: function (objColVals, condition, cb) {
     orm.update("products", objColVals, condition, function (res) {
       cb(res);
@@ -38,6 +49,7 @@ var listing = {
       cb(res);
     });
   }
+
 
 };
 
