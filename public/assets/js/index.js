@@ -10,11 +10,11 @@ $('.viewListing').on("click", function(){
         });
 });
 
-$('#button-addon2').on('click', function(event) {
-    // event.preventDefault();
-    var zipVal = $('.zipCodeVal').val()
-    console.log(zipVal);
-    $.ajax("/listings/" + zipVal, {
+$('#searchBtn').on("click", function() {
+    var zip = $('.zipCodeVal').val();
+    console.log(zip);
+    $.ajax({
+        url: "/listings/" + zip,
         type: "GET",
     }).then(function(data) {
         console.log(data);
