@@ -27,20 +27,4 @@ router.get("/:id", function (req, res) {
   })
 });
 
-<<<<<<< HEAD
-    // //add ID
-    // router.create("/create/", function (req, res) {
-    //     res.render('SWARADA PAGE', {user:req.user});
-    // });
-
-    // listing.listingsByZip(function(data){
-    //   var hbsObject = {
-    //     listings: data
-    //   }
-    //   console.log(hbsObject);
-    //   res.render("listings", hbsObject);
-    // })
-=======
->>>>>>> master
-
 module.exports = router;
