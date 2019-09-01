@@ -19,7 +19,7 @@ function objToSql(ob) {
   }
   // translate array of strings to a single comma-separated string
   return arr.toString();
- }
+}
 
 var orm = {
   allListings: function (tableInput, cb) {
@@ -39,7 +39,7 @@ var orm = {
       cb(result);
     });
   },
-  updateUser: function(tableInput, objColVals, condition, cb){
+  updateUser: function (tableInput, objColVals, condition, cb) {
     var queryString = "UPDATE " + tableInput;
     queryString += " SET ";
     queryString += objToSql(objColVals);
@@ -48,18 +48,11 @@ var orm = {
 
     console.log(queryString);
 
-    connection.query(queryString, function(err, res){
-      if(err) throw err;
+    connection.query(queryString, function (err, res) {
+      if (err) throw err;
       cb(res);
     });
   },
-  // userListings: function(tableInput, col, val, cb){
-  //   var queryString = "SELECT * FROM ?? WHERE ?? = ??";
-  //   connection.query(queryString, [tableInput, col, val], function(err, res){
-  //     if(err) throw err;
-  //     cb(res);
-  //   })
-  // }
   all: function (table, id, cb) {
     var queryString = "SELECT * FROM " + table;
     queryString += " WHERE product_id= ";
@@ -71,7 +64,6 @@ var orm = {
       cb(result);
     });
   },
-
   update: function (table, objColVals, condition, cb) {
     console.log(objColVals, condition);
     var queryString = "UPDATE " + table;
@@ -90,10 +82,9 @@ var orm = {
       cb(result);
     });
   },
-
   delete: function (table, condition, cb) {
 
-    var queryString1 ="SELECT * FROM " + table;
+    var queryString1 = "SELECT * FROM " + table;
     queryString += " WHERE product_id= ";
     queryString += condition;
 
@@ -104,13 +95,12 @@ var orm = {
 
       var queryString2 = "INSERT INTO products_archive (product_id,title, img_url, location, available, price, category, secure, description,customer_id) VALUES (?,?,?,?,?,?,?,?,?,?)"
       console.log(queryString2);
-      connection.query(queryString2, [result1[0].product_id , result1[0].title, result1[0].img_url, result1[0].location, result1[0].available, result1[0].price, result1[0].category, result1[0].secure, result1[0].description,result1[0].customer_id ],function (err, result2) {
+      connection.query(queryString2, [result1[0].product_id, result1[0].title, result1[0].img_url, result1[0].location, result1[0].available, result1[0].price, result1[0].category, result1[0].secure, result1[0].description, result1[0].customer_id], function (err, result2) {
         if (err) {
           throw err;
         }
         console.log("Record archived");
       });
-
     });
 
     var queryString = "DELETE FROM " + table;
@@ -125,26 +115,24 @@ var orm = {
       cb(result);
     });
   },
-
-  listingsByZip: function (tableInput, colToSearch, valOfCol, cb) {
+  listingsByZip: function (table, col, condition) {
     var queryString = "SELECT * FROM ?? WHERE ?? = ?";
-    console.log(queryString);
-    connection.query(queryString, [tableInput, colToSearch, valOfCol], function (err, result) {
-      if (err) throw err;
-      console.log(result);
+    connection.query(queryString, [table, col, condition], function (err, result) {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
+  },
+  indivListing: function (table, col, condition, cb) {
+    var queryString = "SELECT * FROM ?? WHERE ?? =?";
+    connection.query(queryString, [table, col, condition], function (err, result) {
+      if (err) {
+        throw err;
+      }
       cb(result);
     });
   }
-
-  // indivListing: function(table, col, condition, cb){
-  //   var queryString = "SELECT * FROM ?? WHERE ?? =?";
-  //   connection.query(queryString, [table, col, condition], function (err, result) {
-  //     if (err) {
-  //       throw err;
-  //     }
-  //     cb(result);
-  //   });
-  // },
 };
 
 module.exports = orm;
