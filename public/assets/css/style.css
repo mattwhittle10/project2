@@ -107,4 +107,15 @@ input:checked + .slider:before {
     margin: 20px;
 }
 
+.btn{
+    background-color:#62BBC1;
+}
+
 /* footer */
+/* .card footer{
+    border-top: 2px solid #62BBC1;
+} */
+
+.form-control{
+    border: 1px solid #62BBC1;
+}

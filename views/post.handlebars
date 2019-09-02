@@ -4,10 +4,11 @@
         
 <div class="container">
     <div class="row">
-        <div class="col-md-4">
-            <img src="/assets/img/instructions_img.png" alt="display_img" style="width:250px; height:200px">
+        <div class="col-md-4" style="padding-top: 30px">
+            <img src="/assets/img/instructions_img1.png" alt="display_img" style="width:250px; height:200px; border: 1px solid #62BBC1" class="img-thumbnail">
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8" style="padding-top: 30px">
+            <h2 style="color:#62BBC1;">Create New Property!</h2>
             <form id="usrform" class="needs-validation" novalidate action="/api/storage/post" method="POST">
                 <div class="form-group">
                     <label for="validationCustom01">Title :</label>
@@ -18,7 +19,7 @@
                     <div class="invalid-feedback">
                         Please provide a valid Title.
                     </div>
-                </div><br>
+                </div>
                 <div class="form-group">
                     <label for="validationCustom01">Address :</label>
                     <input id="address" type="text" class="form-control" placeholder="address" required>
@@ -28,7 +29,7 @@
                     <div class="invalid-feedback">
                         Please provide a valid Address.
                     </div>
-                </div><br>
+                </div>
                 <div class="form-group">
                     <label for="validationCustom03">City :</label>
                     <input id="city" type="text" class="form-control" placeholder="city" required>
@@ -38,7 +39,7 @@
                     <div class="invalid-feedback">
                         Please provide a valid city.
                     </div>
-                </div><br>
+                </div>
                 <div class="form-group">
                     <label for="validationCustom01">State :</label>
                     <input id="state" type="text" class="form-control" placeholder="state" required>
@@ -48,7 +49,7 @@
                     <div class="invalid-feedback">
                         Please provide a valid State.
                     </div>
-                </div><br>
+                </div>
                 <div class="form-group">
                     <label for="validationCustom01">Zip Code :</label>
                     <input id="zip" type="number" class="form-control" placeholder="zip" required>
@@ -58,23 +59,23 @@
                     <div class="invalid-feedback">
                         Please provide a valid Zip Code.
                     </div>
-                </div><br>
+                </div>
                 <div class="form-group">
                     <label for="validationCustom01">Category :</label>
-                    <select id="category">
+                    <select id="category" style="border: 1px solid #62BBC1">
                         <option value="mostSecured">MostSecured</option>
                         <option value="moreSecured">MoreSecured</option>
                         <option value="secured">Secured</option>
                         <option value="open">Open</option>
                     </select>
-                </div><br>
+                </div>
                 <div class="form-group">
                     <label for="validationCustom01">Secure :</label>
-                    <select id="secure">
+                    <select id="secure" style="border: 1px solid #62BBC1">
                         <option value="Yes">Yes</option>
                         <option value="No">No</option>
                     </select>
-                </div><br>
+                </div>
                 <div class="form-group">
                     <label for="validationCustom01">Price :</label>
                     <input id="price" type="number" class="form-control" placeholder="price" required>
@@ -84,7 +85,7 @@
                     <div class="invalid-feedback">
                         Please provide a valid Number.
                     </div>
-                </div><br>
+                </div>
                 <div class="form-group">
                     <label for="validationCustom01">Image_url :</label>
                     <input id="img_url" type="file" class="form-control" placeholder="img_url" required>
@@ -94,7 +95,7 @@
                     <div class="invalid-feedback">
                         Please provide a valid URL.
                     </div>
-                </div><br>
+                </div>
                 <div class="form-group">
                     <label for="validationCustom01">Description :</label>
                     <textarea id="description" class="form-control" rows="5" required></textarea>
@@ -104,12 +105,12 @@
                     <div class="invalid-feedback">
                         Please provide a valid Description.
                     </div>
-                </div><br>
+                </div>
                 <div class="form-group">
                     <input id="customerId" type="number" class="form-control" value={{user.customer_id}} placeholder="customer_id" readonly style="display:none ">
                 </div>
-                <button id="submit"  type="submit" class="btn btn-primary" style="background-color: grey">Submit</button>
-                <button id="cancel" type="cancel" class="btn btn-primary" style="background-color: grey">Cancel</button>
+                <button id="submit"  type="submit" class="btn btn-primary" >Submit</button>
+                <button id="cancel" type="cancel" class="btn btn-primary" >Cancel</button>
             </form>
         </div>
     </div>
