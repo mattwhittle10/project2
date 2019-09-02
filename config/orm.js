@@ -109,6 +109,25 @@ var orm = {
     });
   },
 
+  update: function (table, objColVals, condition, cb) {
+    console.log(objColVals, condition);
+    var queryString = "UPDATE " + table;
+
+    queryString += " SET ";
+    queryString += "?";
+    queryString += " WHERE product_id=";
+    queryString += "?";
+
+    console.log(queryString);
+    connection.query(queryString, [objColVals, condition], function (err, result) {
+      if (err) {
+        throw err;
+      }
+
+      cb(result);
+    });
+  },
+
   delete: function (table, condition, cb) {
 
     var queryString1 ="SELECT * FROM " + table;
