@@ -40,29 +40,29 @@
 
 <body>
 	<!-- TOP NAV -->
-	<nav class="navbar navbar-light bg-light">
-		<a class="navbar-brand" href="/">
+	<nav class="navbar navbar-light bg-light" style="border-bottom: 2px solid #62BBC1">
+		<a class="navbar-brand" href="/" style="color:#62BBC1; ">
 			<i class="fas fa-warehouse"></i>
 			Hoarder Helper
 		</a>
-		<div>
-			<ul class="nav justify-content-end">
-				<li class="nav-item">
-					<a class="nav-link" href="/">Home</a>
+		<div >
+			<ul class="nav justify-content-end" >
+				<li class="nav-item" >
+					<a class="nav-link" href="/" style="color:#62BBC1">Home</a>
 				</li>
 				{{#if user}}
 				<li class="nav-item">
-					<a class="nav-link" href="/auth/logout">Sign Out</a>
+					<a class="nav-link" href="/auth/logout" style="color:#62BBC1">Sign Out</a>
 				</li>
 				{{else}}
 				<li class="nav-item">
 					{{!-- <a class="nav-link" href="/auth/google">Sign In</a> --}}
-					<a class="nav-link" href="/auth/google">Sign In with Google+</a>
+					<a class="nav-link" href="/auth/google" style="color:#62BBC1">Sign In with Google+</a>
 				</li>
 				{{/if}}
 				{{#if user}}
 				<li class="nav-item">
-					<a class="nav-link" href="/profile">Profile</a>
+					<a class="nav-link" href="/profile" style="color:#62BBC1">Profile</a>
 				</li>
 				{{/if}}
 				{{#if user}}
@@ -78,7 +78,7 @@
 
 	<!-- Footer -->
 	<div class="card footer">
-		<div class="card-footer">
+		<div class="card-footer" style="border-top: 2px solid #62BBC1;border-bottom: 2px solid #62BBC1">
 			Real User's Comments
 		</div>
 		<div class="card-body">

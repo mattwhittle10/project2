@@ -4,10 +4,11 @@
     <div class="jumbotron" style="background-color: white; padding: 0 0; "> --}}
 <div class="container" >
     <div class="row">
-        <div class="col-md-4">
-            <img src="{{this.img_url}}" alt="property_img" style="width:200px; height:200px">
+        <div class="col-md-4" style="padding-top: 30px">
+            <img src="{{this.img_url}}" alt="property_img" style="width:200px; height:200px ;border: 1px solid #62BBC1" class="img-thumbnail">
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8" style="padding-top: 30px">
+            <h2 style="color:#62BBC1;">Update Property!</h2>
             <form id="usrform">
                 <div class="form-group">
                     <label for="title">Title</label>
@@ -52,20 +53,20 @@
                                 <textarea id="description" class="form-control" id="exampleFormControlTextarea1"value= {{this.description}}
                                     rows="5" readonly></textarea>
                             </div> --}}
-                <textarea rows="4" name="comment" readonly style="width: 100%">{{this.description}}</textarea>
+                <textarea rows="4" name="comment" readonly style="width: 100%;border: 1px solid #62BBC1">{{this.description}}</textarea>
                 
                 <div id="newpricediv" class="form-group" style="display:none">
                     <label for="newPrice"> New Price</label>
                     <input id="newprice" type="number" class="form-control" placeholder="newprice">
                 </div>
-                <button id="update" type="update" class="btn btn-primary" style="background-color: grey">Update</button>
-                <button id="delete" type="delete" class="btn btn-primary" style="background-color: grey">Delete</button>
+                <button id="update" type="update" class="btn btn-primary">Update</button>
+                <button id="delete" type="delete" class="btn btn-primary">Delete</button>
                 <button id="confirmUpdate" data-product_id="{{this.product_id}}" type="confirmUpdate"
-                    class="btn btn-primary" style="background-color: grey; display:none">Confirm Update</button>
+                    class="btn btn-primary" style="display:none">Confirm Update</button>
                 <button id="confirmDelete" data-product_id="{{this.product_id}}" type="confirmDelete"
-                    class="btn btn-primary" style="background-color: grey ; display:none">Confirm Delete</button>
+                    class="btn btn-primary" style=" display:none">Confirm Delete</button>
                 <button id="cancel" type="cancel" class="btn btn-primary"
-                    style="background-color: grey; display:none">Cancel</button>
+                    style="display:none">Cancel</button>
             </form>
         </div>
     </div>

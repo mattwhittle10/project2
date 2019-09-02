@@ -1,73 +1,77 @@
-<div>
-    <h1 class="display-4">Welcome, {{user.first_name}} {{user.last_name}}</h1>
-    {{!-- <a class="btn btn-primary" href="/profile/update" role="button">Update Pofile</a>
-    <a class="btn btn-primary" href="#" role="button">Post a Listing</a> --}}
-</div>
-
-
 <!-- CLickable Images -->
 <!-- THROW THESE IN A CARD -->
-<div class="container">
-    <div class="row justify-content-md-center">
-        <div class="col col-lg-2">
-            <a href="/api/storage/post"><img src="assets/images/postHome.png" class="usericon" title="Post a Listing"
-                    alt="New Listing"></a>
+<div class="jumbotron jumbotron-fluid" style="background-color: #62BBC1">
+    <div class="container">
+        <div>
+            <h1 class="display-4">Welcome, {{user.first_name}} {{user.last_name}}!</h1>
+            {{!-- <a class="btn btn-primary" href="/profile/update" role="button">Update Pofile</a>
+    <a class="btn btn-primary" href="#" role="button">Post a Listing</a> --}}
         </div>
-        <div class="col-md-auto">
+        <div class="row justify-content-end">
+            <div class="col col-lg-2">
+                <a href="/api/storage/post"><img src="assets/images/postHome.png" class="usericon"
+                        title="Post a Listing" alt="New Listing"></a>
+            </div>
+            <div class="col-md-auto">
 
-        </div>
-        <div class="col col-lg-2">
-            <a href="/profile/update"><img src="assets/images/clipBoard.jpg" class="usericon" title="Update Profile"
-                    alt="Update Profile"></a>
+            </div>
+            <div class="col col-lg-2">
+                <a href="/profile/update"><img src="assets/images/clipBoard.jpg" class="usericon" title="Update Profile"
+                        alt="Update Profile"></a>
+            </div>
         </div>
     </div>
 </div>
-    <!-- SECOND HALF OF HOMEPAGE -->
-    {{!-- I WILL DO A DIFFERENT CALL FOR THE LISTINGS FROM THE DB --}}
+<!-- SECOND HALF OF HOMEPAGE -->
+{{!-- I WILL DO A DIFFERENT CALL FOR THE LISTINGS FROM THE DB --}}
+<div class="container">
+    <h2>Your Favorites</h2>
     <div class="container">
-        <h2>Your Favorites</h2>
-        <div class="container">
-            <div class="row">
-                {{#each listings}}
-                <div class="card viewListingsCards wrapper" style="width: 18rem;">
-                    <img class="card-img-top" src="{{this.img_url}}" alt="Property Image">
-                    <div class="card-body">
-                        <h5 class="card-title">{{this.title}}</h5>
-                        <p class="card-text"><small class="text-muted">Price: ${{this.price}}/month</small></p>
-                        <p class="card-text"><small class="text-muted">Category: {{this.category}}</small></p>
-                        <p class="card-text"><small class="text-muted">Location: {{this.city}}, {{this.state}}</small></p>
-                         <div class ="text-center" style="item-align:center"><div class ="text-center" style="item-align:center"><a href="profile/listing/{{this.product_id}}" id="{{this.product_id}}" class="btn btn-primary viewListing">View Listing</a></div></div>
+        <div class="row">
+            {{#each listings}}
+            <div class="card viewListingsCards wrapper" style="width: 18rem;">
+                <img class="card-img-top" src="{{this.img_url}}" alt="Property Image">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.title}}</h5>
+                    <p class="card-text"><small class="text-muted">Price: ${{this.price}}/month</small></p>
+                    <p class="card-text"><small class="text-muted">Category: {{this.category}}</small></p>
+                    <p class="card-text"><small class="text-muted">Location: {{this.city}}, {{this.state}}</small></p>
+                    <div class="text-center" style="item-align:center">
+                        <div class="text-center" style="item-align:center"><a href="profile/listing/{{this.product_id}}"
+                                id="{{this.product_id}}" class="btn btn-primary viewListing">View Listing</a></div>
                     </div>
                 </div>
-                {{/each}}
             </div>
+            {{/each}}
         </div>
     </div>
-        {{!-- Divider Line --}}
-        <hr>
+</div>
+{{!-- Divider Line --}}
+<hr>
 
 
 
-        {{!-- I WILL DO A DIFFERENT CALL FOR THE LISTINGS FROM THE DB --}}
-        <div class="container">
-            <h2>Your Postings</h2>
-            <div class="container">
-                <div class="row">
-                    {{#each listings}}
-                    {{#if available}}
-                    <div class="card viewListingsCards wrapper" style="width: 18rem;">
-                        <img class="card-img-top" src="{{this.img_url}}" alt="Property Image">
-                        <div class="card-body">
-                            <h5 class="card-title">{{this.title}}</h5>
-                            <p class="card-text"><small class="text-muted">Price: ${{this.price}}/month</small></p>
-                            <p class="card-text"><small class="text-muted">Category: {{this.category}}</small></p>
-                            <p class="card-text"><small class="text-muted">Location: {{this.city}},
-                                    {{this.state}}</small></p>
-                            <div class ="text-center" style="item-align:center"><a href='/api/{{this.product_id}}' class='btn btn-primary userlisting' id='{{this.product_id}}'>View Listing</a></div>
-                        </div>
-                    </div>
-                    {{/if}}
-                    {{/each}}
+{{!-- I WILL DO A DIFFERENT CALL FOR THE LISTINGS FROM THE DB --}}
+<div class="container">
+    <h2>Your Postings</h2>
+    <div class="container">
+        <div class="row">
+            {{#each listings}}
+            {{#if available}}
+            <div class="card viewListingsCards wrapper" style="width: 18rem;">
+                <img class="card-img-top" src="{{this.img_url}}" alt="Property Image">
+                <div class="card-body">
+                    <h5 class="card-title">{{this.title}}</h5>
+                    <p class="card-text"><small class="text-muted">Price: ${{this.price}}/month</small></p>
+                    <p class="card-text"><small class="text-muted">Category: {{this.category}}</small></p>
+                    <p class="card-text"><small class="text-muted">Location: {{this.city}},
+                            {{this.state}}</small></p>
+                    <div class="text-center" style="item-align:center"><a href='/api/{{this.product_id}}'
+                            class='btn btn-primary userlisting' id='{{this.product_id}}'>View Listing</a></div>
                 </div>
             </div>
+            {{/if}}
+            {{/each}}
         </div>
+    </div>
+</div>
