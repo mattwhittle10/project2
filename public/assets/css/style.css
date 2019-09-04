@@ -1,5 +1,3 @@
-body{
-}
 h2 {
     text-align: left;
 }
@@ -104,16 +102,9 @@ input:checked + .slider:before {
     margin-left: 88%;
 }
 
-/* .favorites {
-    color: red;
-
-} */
-
 .favorites:hover {
     animation: pulse 1.5s infinite;
   }
-  
-  
   @keyframes pulse {
     0% {
       color: black;
@@ -147,7 +138,6 @@ input:checked + .slider:before {
 .form-control{
     border: 1px solid #62BBC1;
 }
-<<<<<<< HEAD
 
 
 /* cards on listings page */
@@ -163,5 +153,3 @@ input:checked + .slider:before {
     box-shadow: 10px 15px 7px #C7C7C7;
   }
 
-=======
->>>>>>> 5cd7c98930396562d698d3fc36b495e28c44fe7f
