@@ -2,7 +2,7 @@
     <div class="d-flex flex-row bd-highlight">
         <div class="col-lg-6" style='margin-left:.5%;'>
             {{#listing}}
-            <div class='col-lg-6' style="margin-left: 1%; margin-bottom: 4%;">
+            <div class='col-lg-6' style="margin-left: 1%; margin-bottom: 4%;padding-top: 30px">
                 <img src='{{this.img_url}}' alt='Listing Image'>
                 <div>
                     <div>
@@ -10,13 +10,13 @@
                         <h5>Location:{{this.city}}</h5>
                     </div>
                     <p>
-                        <h6>Price: ${{this.price}}</h6>
+                        <h6>Price: ${{this.price}}/month</h6>
                     </p>
                     <p><small class='text-muted'>Category: {{this.category}}</small></p>
 
                     {{!-- put calendar here!!! --}}
                     <h5>Check calendar dates</h5>
-                        <input class="date-input" type="text" data-dd-default-date="12/31/2019">
+                        <input class="date-input" type="text" data-dd-default-date="12/31/2019" style="border: 1px solid #62BBC1"><br><br>
 
                     {{!-- end of calendar --}}
 
@@ -36,10 +36,10 @@
             <div id="mapImage" class="col-lg-6" style="margin-right: 1%;">
                 <span>
                     <div>
-                        <div style="overflow:hidden;width: 270%; position: relative;">
+                        <div style="overflow:hidden;width: 270%; position: relative;padding-top: 30px">
                             <iframe width="80%" height="800"
                                 src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=207%20Wilkie%20kaysville%2C%20ut%2084037+(Title)&amp;ie=UTF8&amp;t=&amp;z=10&amp;iwloc=B&amp;output=embed"
-                                frameborder="2" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+                                frameborder="2" scrolling="no" marginheight="0" marginwidth="0" ></iframe>
                             <div
                                 style="position: absolute;width: 100%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;">
                                 <small style="line-height: 1.8;font-size: 2px;background: #fff;">Powered by
