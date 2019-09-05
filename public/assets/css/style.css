@@ -127,7 +127,7 @@ input:checked + .slider:before {
 }
 
 .btn{
-    background-color:#62BBC1;
+    background-color:#5477E8;
 }
 
 /* footer */
@@ -136,7 +136,7 @@ input:checked + .slider:before {
 } */
 
 .form-control{
-    border: 1px solid #62BBC1;
+    border: 1px solid #5477E8;
 }
 
 

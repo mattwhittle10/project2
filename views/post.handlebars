@@ -5,10 +5,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4" style="padding-top: 30px">
-            <img src="/assets/img/instructions_img1.png" alt="display_img" style="width:250px; height:200px; border: 1px solid #62BBC1" class="img-thumbnail">
+            <img src="/assets/img/instruction_img2.png" alt="display_img" style="width:250px; height:200px; border: 1px solid #62BBC1" class="img-thumbnail">
         </div>
         <div class="col-md-8" style="padding-top: 30px">
-            <h2 style="color:#62BBC1;">Create New Property!</h2>
+            <h2 style="color:#5477E8;">Create New Property!</h2>
             <form id="usrform" class="needs-validation" novalidate action="/api/storage/post" method="POST">
                 <div class="form-group">
                     <label for="validationCustom01">Title :</label>
@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="validationCustom01">State :</label>
+                    <label for="validationCustom01">State Code :(must have two letters)</label>
                     <input id="state" type="text" class="form-control" placeholder="state" required>
                     <div class="valid-feedback">
                         Looks good!
@@ -62,7 +62,7 @@
                 </div>
                 <div class="form-group">
                     <label for="validationCustom01">Category :</label>
-                    <select id="category" style="border: 1px solid #62BBC1">
+                    <select id="category" style="border: 1px solid #5477E8">
                         <option value="mostSecured">MostSecured</option>
                         <option value="moreSecured">MoreSecured</option>
                         <option value="secured">Secured</option>
@@ -71,7 +71,7 @@
                 </div>
                 <div class="form-group">
                     <label for="validationCustom01">Secure :</label>
-                    <select id="secure" style="border: 1px solid #62BBC1">
+                    <select id="secure" style="border: 1px solid #5477E8">
                         <option value="Yes">Yes</option>
                         <option value="No">No</option>
                     </select>
@@ -118,3 +118,4 @@
 {{!-- {{/each}}  --}}
 {{!-- </div>
 </div> --}}
+<script src="/assets/js/post.js"></script> 
