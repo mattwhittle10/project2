@@ -17,14 +17,15 @@
 
                     {{!-- put calendar here!!! --}}
                     <h5>Check calendar dates</h5>
-                        <input class="date-input" type="text" data-dd-default-date="12/31/2019" style="border: 1px solid #5477E8"><br><br>
+                    <input class="date-input" type="text" data-dd-default-date="12/31/2019"
+                        style="border: 1px solid #5477E8"><br><br>
 
                     {{!-- end of calendar --}}
 
-                    <div style="text-align:center"><a href='/listings' class='btn btn-primary'
-                            id='{{this.product_id}}'>Go Back</a><a id="modalButton" class='btn btn-primary'
-                            id='{{this.product_id}}'>Book Listing</a><a class="favorites"><i class="far fa-heart fa-2x"
-                                style="float:right"></i></a></div>
+                    <div style="text-align:center"><input class='btn btn-primary' action="action"
+                            onclick="window.history.go(-1); return false;" type="button" value="Go Back" />
+                        <a id="modalButton" class='btn btn-primary' id='{{this.product_id}}'>Book Listing</a><a
+                            class="favorites"><i class="far fa-heart fa-2x" style="float:right"></i></a></div>
                 </div>
             </div>
             {{/listing}}
@@ -34,30 +35,12 @@
         </div>
 
         <div class="container-fluid">
-            <div id="mapImage" class="col-lg-6" style="margin-right: 1%;">
-                <span>
-                    <div>
-                        <div style="overflow:hidden;width: 270%; position: relative;padding-top: 30px">
-                            <iframe width="80%" height="800"
-                                src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=207%20Wilkie%20kaysville%2C%20ut%2084037+(Title)&amp;ie=UTF8&amp;t=&amp;z=10&amp;iwloc=B&amp;output=embed"
-                                frameborder="2" scrolling="no" marginheight="0" marginwidth="0" ></iframe>
-                            <div
-                                style="position: absolute;width: 100%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;">
-                                <small style="line-height: 1.8;font-size: 2px;background: #fff;">Powered by
-                                    <a href="https://embedgooglemaps.com/de/">Embedgooglemaps.com/de/</a>
-                                    <a href="https://and-route.com/at/">billiger mietwagen bezahlung</a>
-                                </small>
-                            </div>
-                            <style>
-                                #gmap_canvas img {
-                                    max-width: none !important;
-                                    background: none !important
-                                }
-                            </style>
-                        </div>
-                    </div>
-                </span>
+            <div class="container-fluid">
+                <div class="col-lg-6" style="margin-right: 1%;">
+                    <div id="map" style="width:220%; height:800px;"></div>
+                </div>
             </div>
+
         </div>
     </div>
 
@@ -65,5 +48,36 @@
     <script>
     </script>
 
-<script>
-</script>
+    <script>
+
+        // Initialize and add the map
+        function initMap() {
+            var options = {
+                zoom: 10,
+                center: { lat: 40.7608, lng: -111.8910 }
+            }
+            console.log(options.center);
+            // The map, centered at options
+            var map = new google.maps.Map(document.getElementById('map'), { zoom: 12, options });
+            // The marker, positioned at options
+            addMarker({ lat: 41.0894, lng: -112.0647 });
+            addMarker({ lat: 40.5650, lng: -111.8390 });
+            addMarker({ lat: 41.11255, lng: -111.76874 });
+            addMarker({ lat: 40.75195, lng: -111.8921 });
+            addMarker({ lat: 40.752096, lng: -111.93901 });
+            addMarker({ lat: 40.7737, lng: -111.90623 });
+
+            function addMarker(coords) {
+                var image = 'http://maps.google.com/mapfiles/kml/paddle/blu-circle.png';
+                var marker = new google.maps.Marker({
+                    position: coords,
+                    animation: google.maps.Animation.DROP,
+                    map: map,
+                    icon: image
+                });
+            }
+        }
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2BBPXcQt6Md9T1SnCW6I4y8C-Uy-npbc&callback=initMap">
+        </script>

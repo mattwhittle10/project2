@@ -1,6 +1,6 @@
 window.onscroll = function () { myFunction() };
 
-var mapImage = document.getElementById("mapImage");
+var mapImage = document.getElementById("mapContainer");
 var sticky = mapImage.offsetTop;
 
 function myFunction() {
@@ -11,9 +11,15 @@ function myFunction() {
     }
 }
 
+var zip = '';
+
+
 $(document).ready(function () {
     $("span").click(function () {
-        $("#mapImage").toggle();
+        $("#mapContainer").toggle(myFunction());
+        $("#mapContainer").toggleClass('col-lg-0');
+        $("#cardsContainer").toggleClass('col-lg-12');
+        $("#cardFluid").toggleClass('container');
     });
 
     var divs = $('.card');
@@ -26,13 +32,3 @@ $(document).ready(function () {
     });
 });
 
-$('#searchBtn').on("click", function() {
-    var zip = $('.zipCodeVal').val();
-    console.log(zip);
-    $.ajax({
-        url: "/listings/" + zip,
-        type: "GET",
-    }).then(function(data) {
-        console.log(data);
-    });
-});
