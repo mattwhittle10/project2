@@ -5,11 +5,11 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4" style="padding-top: 30px">
-            <img src="{{this.img_url}}" alt="property_img" style="width:200px; height:200px ;border: 1px solid #5477E8"
-                class="img-thumbnail">
+            <img src="{{this.img_url}}" alt="property_img" style="border: 1px solid #5477E8" class="img-thumbnail update-img">
         </div>
         <div class="col-md-8" style="padding-top: 30px">
-            <h2 style="color:#5477E8;">Update Property!</h2>
+            <h2 class="update-title" style="color:#5477E8;">Update Listing</h2>
+            <hr>
             <form id="usrform">
                 <div class="form-group">
                     <label for="title">Title</label>
@@ -61,13 +61,17 @@
                     <label for="newPrice"> New Price</label>
                     <input id="newprice" type="number" class="form-control" placeholder="newprice">
                 </div>
-                <button id="update" type="update" class="btn btn-primary">Update</button>
-                <button id="delete" type="delete" class="btn btn-primary">Delete</button>
+                <div class="text-center" style="item-align:center">
+                <button id="update" type="update" class="btn btn-primary update-button">Update</button>
+                <button id="delete" type="delete" class="btn btn-primary update-button">Delete</button>
+                </div>
                 <button id="confirmUpdate" data-product_id="{{this.product_id}}" type="confirmUpdate"
                     class="btn btn-primary" style="display:none">Confirm Update</button>
                 <button id="confirmDelete" data-product_id="{{this.product_id}}" type="confirmDelete"
                     class="btn btn-primary" style=" display:none">Confirm Delete</button>
                 <button id="cancel" type="cancel" class="btn btn-primary" style="display:none">Cancel</button>
+                <br>
+                <br>
             </form>
         </div>
     </div>
