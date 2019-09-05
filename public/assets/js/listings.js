@@ -11,8 +11,6 @@ function myFunction() {
     }
 }
 
-var zip = '';
-
 
 $(document).ready(function () {
     $("span").click(function () {
@@ -26,9 +24,9 @@ $(document).ready(function () {
     for (var i = 0; i < divs.length; i += 2) {
         divs.slice(i, i + 2).wrapAll('<div class="row"></div>');
     }
-
     $(".far").click(function () {
-        $(this).toggleClass('favorites');
+        console.log("hello");
+        $(this).toggleClass('favMarker');
     });
 });
 
