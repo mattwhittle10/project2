@@ -42,6 +42,7 @@ $(function () {
                             // Reload the page to get the updated list
                             console.log(image.imageUrl);
                             insertIntoTable(image.imageUrl);
+                            alert("Storage Created");
                             location.reload();
                         }
                     );

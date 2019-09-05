@@ -13,7 +13,7 @@
     </div>
 </div>
 
-<h2 id="zipCodeTitle" style='margin-left:2%;'>Listings for Zip Code:{{zip}}</h2>
+<h2 id="zipCodeTitle" style='margin-left:2%; margin-top:2%; color:#5477E8;'>Listings for Zip Code:{{zip}}</h2>
 <div class="mapView">Map View
     <label class="switch">
         <input type="checkbox" checked>
@@ -27,7 +27,7 @@
     <div class="d-flex flex-row bd-highlight">
         <div id="cardsContainer" class="card-deck col-lg-6" style='margin-left:.5%;'>
             {{#each listings}}
-            <div id="listingCards" class='card' style="margin-left: 1%; margin-bottom: 4%;">
+            <div id="listingCards" class='card col-lg-6' style="margin-left: 1%; margin-bottom: 4%;">
                 <img class='card-img-top' src='{{this.img_url}}' alt='Card image cap'>
                 <div class='card-body'>
                     <div class='card-title'>

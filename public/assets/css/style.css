@@ -161,3 +161,7 @@ input:checked + .slider:before {
     box-shadow: 10px 15px 7px #C7C7C7;
   }
 
+  #searchBtn{
+      color: white;
+      background-color: #5477E8;
+  }
