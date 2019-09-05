@@ -17,6 +17,15 @@
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
+	{{!-- //bootstrap <script></scr --}}
+
+	 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+		crossorigin="anonymous"></script>
+
 	<!-- datedropper -->
 	<script src="/assets/js/datedropper.pro.min.js"></script>
 	<!--Moment-->
@@ -36,29 +45,29 @@
 
 <body>
 	<!-- TOP NAV -->
-	<nav class="navbar navbar-light bg-light" style="border-bottom: 2px solid #62BBC1">
-		<a class="navbar-brand" href="/" style="color:#62BBC1; ">
+	<nav class="navbar navbar-light bg-light" style="border-bottom: 2px solid #5477E8">
+		<a class="navbar-brand" href="/" style="color:#5477E8; ">
 			<i class="fas fa-warehouse"></i>
 			Hoarder Helper
 		</a>
 		<div >
 			<ul class="nav justify-content-end" >
 				<li class="nav-item" >
-					<a class="nav-link" href="/" style="color:#62BBC1">Home</a>
+					<a class="nav-link" href="/" style="color:#5477E8">Home</a>
 				</li>
 				{{#if user}}
 				<li class="nav-item">
-					<a class="nav-link" href="/auth/logout" style="color:#62BBC1">Sign Out</a>
+					<a class="nav-link" href="/auth/logout" style="color:#5477E8">Sign Out</a>
 				</li>
 				{{else}}
 				<li class="nav-item">
 					{{!-- <a class="nav-link" href="/auth/google">Sign In</a> --}}
-					<a class="nav-link" href="/auth/google" style="color:#62BBC1">Sign In with Google+</a>
+					<a class="nav-link" href="/auth/google" style="color:#5477E8">Sign In with Google+</a>
 				</li>
 				{{/if}}
 				{{#if user}}
 				<li class="nav-item">
-					<a class="nav-link" href="/profile" style="color:#62BBC1">Profile</a>
+					<a class="nav-link" href="/profile" style="color:#5477E8">Profile</a>
 				</li>
 				{{/if}}
 				{{#if user}}
@@ -74,7 +83,7 @@
 
 	<!-- Footer -->
 	<div class="card footer">
-		<div class="card-footer" style="border-top: 2px solid #62BBC1;border-bottom: 2px solid #62BBC1">
+		<div class="card-footer" style="border-top: 2px solid #5477E8;border-bottom: 2px solid #5477E8">
 			Real User's Comments
 		</div>
 		<div class="card-body">
@@ -88,23 +97,19 @@
 		</div>
 	</div>
 
+   
+
 	<!-- Optional JavaScript -->
 	<!--External Javascript files-->
-	<script src="/assets/js/post.js"></script>   
+	  
 	<script src="/assets/js/update.js"></script>
-	<script src="/assets/js/update-profile.js"></script>
 	<script src="/assets/js/userHomePage.js"></script>
 	<script src="/assets/js/index.js"></script>
 	<script src="/assets/js/each-listing.js"></script>
 	<script src="/assets/js/listings.js"></script>
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-		crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-		crossorigin="anonymous"></script>
+	
 
 </body>
 
