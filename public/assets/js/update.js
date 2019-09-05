@@ -42,6 +42,7 @@ $(function () {
             function () {
                 console.log("record updated");
                 // Reload the page to get the updated list
+                alert("Record Updated");
                 location.reload();
             }
         );
@@ -62,8 +63,9 @@ $(function () {
           function() {
             console.log("record deleted", id);
             // Reload the page to get the updated list
+            alert("Record deleted");
             location.reload();
-           alert("Record deleted");
+           
           }
         );
       });
