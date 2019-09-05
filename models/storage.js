@@ -8,7 +8,7 @@ var listing = {
     });
   },
   userListings: function (id, cb) {
-    orm.userListings("products", "customer_id", id, function (res) {
+    orm.selectWhere("products", "customer_id", id, function (res) {
       cb(res);
     });
   },
@@ -48,7 +48,8 @@ var listing = {
     orm.selectWhere("products", "product_id", condition, function (res) {
       cb(res);
     });
-  }
+  },
+  
 
 
 };

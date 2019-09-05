@@ -2,7 +2,7 @@
 <div class="jumbotron jumbotron-fluid" style="background-color: #5477E8">
     <div class="container">
         <h1 class="display-4">Hoarder Helper!</h1>
-        <p class="lead">Our mission is to connect people who have no space with friendly hosts who have plenty of it!
+        <p class="lead">We're connecting people with extra space to people with extra stuff!
         </p>
         <br>
         <br>
@@ -27,19 +27,32 @@
 <div class="container">
     <div class="row">
         {{#each listings}}
-        {{#if available}}
         <div class="card viewListingsCards wrapper" style="width: 18rem;">
             <img class="card-img-top" src="{{this.img_url}}" alt="Property Image">
             <div class="card-body">
                 <h5 class="card-title">{{this.title}}</h5>
-                <p class="card-text"><small class="text-muted">Price: ${{this.price}}/month</small></p>
-                <p class="card-text"><small class="text-muted">Category: {{this.category}}</small></p>
-                <p class="card-text"><small class="text-muted">Location: {{this.city}}, {{this.state}}</small></p>
+                <p class="card-text">Price: ${{this.price}}/month</small></p>
+                <p class="card-text">Category: {{this.category}}</small></p>
+                <p class="card-text">Location: {{this.city}}, {{this.state}}</small></p>
                 <a href="/profile/listing/{{this.product_id}}" id="{{this.product_id}}"
                     class="btn btn-primary viewListing">View Listing</a>
             </div>
         </div>
-        {{/if}}
         {{/each}}
     </div>
 </div>
+	<!-- Footer -->
+	<div class="card footer">
+		<div class="card-footer" style="border-top: 2px solid #5477E8;border-bottom: 2px solid #5477E8">
+			Real User's Comments
+		</div>
+		<div class="card-body">
+			<blockquote class="blockquote mb-0">
+				<p>The site was so easy to use!</p>
+				<footer class="blockquote-footer">The best in it's class - HANDS DOWN. <cite
+						title="Source Title">Jonathan
+						Bae Jerano</cite>
+				</footer>
+			</blockquote>
+		</div>
+	</div>

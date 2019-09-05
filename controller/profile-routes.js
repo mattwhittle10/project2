@@ -14,13 +14,14 @@ const authCheck = (req, res, next) => {
 };
 
 router.get('/', authCheck, (req, res) => {
-    listing.allListings(function(data){
+    var id = parseInt(req.user.customer_id);
+    listing.userListings(id, function(data){
         var listings = data;
-        //profile page will render here! passing in the user object with all of the details 
+        //profile page will render here! passing in the user object with all of the details
         //send in a view here
-        res.render('profile', {user:req.user, listings});   
+        res.render('profile', {user:req.user, listings});
     })
-});
+ });
 
 router.get('/update', (req, res) =>{
     var id = parseInt(req.user.customer_id);

@@ -32,8 +32,9 @@ function objToSql(ob) {
 }
 
 var orm = {
-  allListings: function (tableInput, cb) {
-    var queryString = "SELECT * FROM " + tableInput + ";";
+  allListings: function (tableInput,  cb) {
+    var queryString = "SELECT * FROM " + tableInput + " LIMIT 3;";
+    console.log(queryString);
     connection.query(queryString, function (err, result) {
       if (err) {
         throw err;
