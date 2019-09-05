@@ -92,14 +92,19 @@ input:checked + .slider:before {
 
       
 
-.sticky {
-    position: fixed;
-    top: 2%;
-    width: 23.7%;
-}
+    .sticky {
+        position: fixed;
+        top: 2%;
+        width: 47.5%;
+        margin-left: 48.9%;
+    }
 
 .mapView {
     margin-left: 88%;
+}
+
+#mapContainer {
+    margin-right: 2%;
 }
 
 .favorites:hover {

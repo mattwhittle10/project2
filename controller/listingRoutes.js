@@ -12,9 +12,12 @@ router.get("/", function (req, res) {
 router.get("/:zip", function (req, res) {
   var zip = req.params.zip;
   listing.listingsByZip(zip, function(data) {
+    console.log()
     var listings = data;
+    var test = {user:req.user, zip, listings};
+    console.log(test);
     console.log(listings);
-    res.render('listings', {user:req.user, listings});
+    res.render('listings', {user:req.user, zip, listings});
   })
 });
 

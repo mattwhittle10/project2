@@ -13,21 +13,21 @@
     </div>
 </div>
 
-<h2 style="margin-left:2%;padding-top: 30px; color:#5477E8">Listings for Zip Code!</h2>
-<div class="mapView" style="color: #5477E8">Map View
-    <label class="switch" >
-        <input type="checkbox" style="background-color: #5477E8" checked>
-        <span class="slider round" style="background-color: #5477E8"></span>
+<h2 id="zipCodeTitle" style='margin-left:2%;'>Listings for Zip Code:{{zip}}</h2>
+<div class="mapView">Map View
+    <label class="switch">
+        <input type="checkbox" checked>
+        <span class="slider round"></span>
     </label>
 </div>
 <br>
 
 
-<div class="container-fluid">
+<div id="cardFluid" class="container-fluid">
     <div class="d-flex flex-row bd-highlight">
         <div id="cardsContainer" class="card-deck col-lg-6" style='margin-left:.5%;'>
             {{#each listings}}
-            <div id="listingCards" class='card col-lg-6' style="margin-left: 1%; margin-bottom: 4%;">
+            <div id="listingCards" class='card' style="margin-left: 1%; margin-bottom: 4%;">
                 <img class='card-img-top' src='{{this.img_url}}' alt='Card image cap'>
                 <div class='card-body'>
                     <div class='card-title'>
@@ -35,7 +35,7 @@
                         <h5>Location:{{this.city}}</h5>
                     </div>
                     <p class='card-text'>
-                        <h6>Price: ${{this.price}}/month</h6>
+                        <h6>Price: ${{this.price}}</h6>
                     </p>
                     <p class='card-text'><small class='text-muted'>Category: {{this.category}}</small></p>
                     <div style="text-align:center"><a href='../profile/listing/{{this.product_id}}'
@@ -45,30 +45,42 @@
             </div>
             {{/each}}
         </div>
-        <div class="container-fluid">
-            <div id="mapImage" class="col-lg-6" style="margin-right: 1%;">
-                <span>
-                    <div>
-                        <div style="overflow:hidden;width: 270%; position: relative;">
-                            <iframe width="80%" height="800"
-                                src="https://maps.google.com/maps?width=700&amp;height=440&amp;hl=en&amp;q=207%20Wilkie%20kaysville%2C%20ut%2084037+(Title)&amp;ie=UTF8&amp;t=&amp;z=10&amp;iwloc=B&amp;output=embed"
-                                frameborder="2" scrolling="no" marginheight="0" marginwidth="0"></iframe>
-                            <div
-                                style="position: absolute;width: 100%;bottom: 10px;left: 0;right: 0;margin-left: auto;margin-right: auto;color: #000;text-align: center;">
-                                <small style="line-height: 1.8;font-size: 2px;background: #fff;">Powered by
-                                    <a href="https://embedgooglemaps.com/de/">Embedgooglemaps.com/de/</a>
-                                    <a href="https://and-route.com/at/">billiger mietwagen bezahlung</a>
-                                </small>
-                            </div>
-                            <style>
-                                #gmap_canvas img {
-                                    max-width: none !important;
-                                    background: none !important
-                                }
-                            </style>
-                        </div>
-                    </div>
-                </span>
+        <div id="mapContainer" class="container-fluid">
+            <div class="col-lg-6" style="margin-right: 1%;">
+                 <div id="map" style="width:220%; height:800px;"></div>
             </div>
         </div>
     </div>
+   <script>
+
+// Initialize and add the map
+function initMap() {
+    var options = {
+        zoom:10,
+        center:{lat: 40.7608, lng: -111.8910}
+    }
+    console.log(options.center);
+  // The map, centered at options
+  var map = new google.maps.Map(document.getElementById('map'), {zoom: 12, options});
+  // The marker, positioned at options
+    addMarker({lat:41.0894,lng:-112.0647});
+    addMarker({lat:40.5650,lng:-111.8390});
+    addMarker({lat:	41.11255,lng:-111.76874});
+    addMarker({lat:	40.75195,lng:-111.8921});
+    addMarker({lat: 40.752096,lng:-111.93901});
+    addMarker({lat:	40.7737,lng:-111.90623});
+
+  function addMarker(coords){
+  var image = 'http://maps.google.com/mapfiles/kml/paddle/blu-circle.png';
+  var marker = new google.maps.Marker({
+      position: coords,
+      animation: google.maps.Animation.DROP, 
+      map: map,
+      icon: image
+      });
+}
+}
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2BBPXcQt6Md9T1SnCW6I4y8C-Uy-npbc&callback=initMap">
+    </script>
