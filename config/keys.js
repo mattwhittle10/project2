@@ -4,7 +4,7 @@ module.exports = {
         clientSecret: process.env.clientSecret,
     },
     session:{
-        cookieKey: 'SAUCESOMENESS'
+        cookieKey: process.env.cookieKey
     },
     config :{
         accessKeyId: process.env.accessKeyId,
