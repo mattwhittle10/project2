@@ -106,7 +106,12 @@ input:checked + .slider:before {
 #mapContainer {
     margin-right: 2%;
 }
-
+.favMarker {
+    color: red;
+}
+.favorites {
+    color: red;
+}
 .favorites:hover {
     animation: pulse 1.5s infinite;
   }
@@ -118,9 +123,7 @@ input:checked + .slider:before {
       color: #FF4136;
     }
   }
-  .favorites{
-    color:red;
-}
+
 /* listings page search  */
 .small-searchbar{
     width: 40%;
@@ -158,3 +161,7 @@ input:checked + .slider:before {
     box-shadow: 10px 15px 7px #C7C7C7;
   }
 
+  #searchBtn{
+      color: white;
+      background-color: #5477E8;
+  }
