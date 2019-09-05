@@ -53,21 +53,21 @@
 		<div >
 			<ul class="nav justify-content-end" >
 				<li class="nav-item" >
-					<a class="nav-link" href="/" style="color:#5477E8">Home</a>
+					<a class="nav-link" href="/" style="color:darkslategrey">Home</a>
 				</li>
 				{{#if user}}
 				<li class="nav-item">
-					<a class="nav-link" href="/auth/logout" style="color:#5477E8">Sign Out</a>
+					<a class="nav-link" href="/auth/logout" style="color:darkslategrey">Sign Out</a>
 				</li>
 				{{else}}
 				<li class="nav-item">
 					{{!-- <a class="nav-link" href="/auth/google">Sign In</a> --}}
-					<a class="nav-link" href="/auth/google" style="color:#5477E8">Sign In with Google+</a>
+					<a class="nav-link" href="/auth/google" style="color:darkslategrey">Sign In with Google+</a>
 				</li>
 				{{/if}}
 				{{#if user}}
 				<li class="nav-item">
-					<a class="nav-link" href="/profile" style="color:#5477E8">Profile</a>
+					<a class="nav-link" href="/profile" style="color:darkslategrey">Profile</a>
 				</li>
 				{{/if}}
 				{{#if user}}

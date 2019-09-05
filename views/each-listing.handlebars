@@ -17,18 +17,25 @@
 
                     {{!-- put calendar here!!! --}}
                     <h5>Check calendar dates</h5>
-                    <input class="date-input" type="text" data-dd-default-date="12/31/2019"
-                        style="border: 1px solid #5477E8"><br><br>
+                    <input class="date-input" type="text" style="border: 1px solid #5477E8">
+                    <input class="date-input" type="text" style="border: 1px solid #5477E8"><br><br>
 
                     {{!-- end of calendar --}}
+            {{/listing}}
 
                     <div style="text-align:center"><input class='btn btn-primary' action="action"
                             onclick="window.history.go(-1); return false;" type="button" value="Go Back" />
-                        <a id="modalButton" class='btn btn-primary' id='{{this.product_id}}'>Book Listing</a><a
-                             class="favorites"><i class="far fa-heart fa-2x" style="float:right"></i></a></div>
+                    {{#user}}
+                        <h1> USERS NAME IS {{this.first_name}}</h1>
+                        {{#if this}}
+                        <a class='btn btn-primary' data-toggle="modal" data-target="#bookingModal">Book Listing</a>
+                        {{/if}}
+                        <a class='btn btn-primary' data-toggle="modal" data-target="#signupModal">Book Listing</a>
+                    {{/user}}
+
+                            <a class="favorites"><i class="far fa-heart fa-2x" style="float:right"></i></a></div>
                 </div>
             </div>
-            {{/listing}}
 
 
 
@@ -43,6 +50,50 @@
 
         </div>
     </div>
+
+
+
+    <!-- BOOKING Modal -->
+<div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="booking-listing" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="resumeTitle">Thank you!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                Your request for booking has been sent. Please wait 24 hours for the owner to approve your request. 
+                Thank you.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- SIGNUP Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="login-modal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="resumeTitle">Whoops</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                You need to sign up or log in to proceed with booking!
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
     <script>
 

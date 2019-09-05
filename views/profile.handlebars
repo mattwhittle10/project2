@@ -1,27 +1,18 @@
 <!-- CLickable Images -->
 <!-- THROW THESE IN A CARD -->
-<div class="jumbotron jumbotron-fluid" style="background-color: #5477E8">
+<div class="jumbotron jumbotron-fluid shadow profile-jumbo" style="background-color: #5477E8">
     <div class="container">
         <div>
-            <h1 class="display-4">Welcome, {{user.first_name}} {{user.last_name}}!</h1>
-            {{!-- <a class="btn btn-primary" href="/profile/update" role="button">Update Pofile</a>
-    <a class="btn btn-primary" href="#" role="button">Post a Listing</a> --}}
-        </div>
-        <div class="row justify-content-end">
-            <div class="col col-lg-2">
-                <a href="/api/storage/post"><img src="assets/images/postHome.png" class="usericon"
-                        title="Post a Listing" alt="New Listing"></a>
-            </div>
-            <div class="col-md-auto">
-
-            </div>
-            <div class="col col-lg-2">
-                <a href="/profile/update"><img src="assets/images/clipBoard.jpg" class="usericon" title="Update Profile"
-                        alt="Update Profile"></a>
-            </div>
+            <h1 class="display-4 profile-title">Welcome, {{user.first_name}} {{user.last_name}}</h1>
+            <a class="btn btn-outline-dark" href="/api/storage/post" role="button">Post a Listing </a>
+            <a class="btn btn-outline-dark" href="/profile/update" role="button">Update Profile</a>
         </div>
     </div>
 </div>
+{{!-- these images were inside the links above
+<img src="assets/images/postHome.png" class="usericon" title="Post a Listing" alt="New Listing">
+<img src="assets/images/clipBoard.jpg" class="usericon" title="Update Profile"alt="Update Profile"> --}}
+
 <!-- SECOND HALF OF HOMEPAGE -->
 {{!-- I WILL DO A DIFFERENT CALL FOR THE LISTINGS FROM THE DB --}}
 {{!-- <div class="container">
@@ -62,12 +53,11 @@
                 <img class="card-img-top" src="{{this.img_url}}" alt="Property Image">
                 <div class="card-body">
                     <h5 class="card-title">{{this.title}}</h5>
-                    <p class="card-text"><small class="text-muted">Price: ${{this.price}}/month</small></p>
-                    <p class="card-text"><small class="text-muted">Category: {{this.category}}</small></p>
-                    <p class="card-text"><small class="text-muted">Location: {{this.city}},
-                            {{this.state}}</small></p>
+                    <p class="card-text">Price: ${{this.price}}/month</p>
+                    <p class="card-text">Category: {{this.category}}</p>
+                    <p class="card-text">Location: {{this.city}}, {{this.state}}</p>
                     <div class="text-center" style="item-align:center"><a href='/api/{{this.product_id}}'
-                            class='btn btn-primary userlisting' id='{{this.product_id}}'>View Listing</a></div>
+                            class='btn btn-primary userlisting' id='{{this.product_id}}'>Update</a></div>
                 </div>
             </div>
             {{/if}}
