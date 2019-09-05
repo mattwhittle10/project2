@@ -63,6 +63,7 @@ $(function () {
             console.log("record deleted", id);
             // Reload the page to get the updated list
             location.reload();
+           alert("Record deleted");
           }
         );
       });

@@ -47,7 +47,7 @@ price INTEGER(5) NOT NULL,
 category VARCHAR (30) NOT NULL,
 secure BOOLEAN NOT NULL,
 description VARCHAR(250) NOT NULL,
-customer_id  INTEGER ,
+customer_id  INTEGER 
 );
 
 

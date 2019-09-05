@@ -131,15 +131,17 @@ var orm = {
   delete: function (table, condition, cb) {
 
     var queryString1 ="SELECT * FROM " + table;
-    queryString += " WHERE product_id= ";
+    queryString += "WHERE product_id= ";
     queryString += condition;
 
+    console.log(queryString1);
     connection.query(queryString1, function (err, result1) {
       if (err) {
         throw err;
       }
-
-      var queryString2 = "INSERT INTO products_archive (product_id,title, img_url, address,city,state,zip available, price, category, secure, description,customer_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)"
+      
+      console.log(result1[0].product_id , result1[0].title, result1[0].img_url, result1[0].address,result1[0].city,result1[0].state,result1[0].zip, result1[0].available, result1[0].price, result1[0].category, result1[0].secure, result1[0].description,result1[0].customer_id);
+      var queryString2 = "INSERT INTO products_archive (product_id,title,img_url,address,city,state,zip,available,price,category,secure,description,customer_id) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?) ";
       console.log(queryString2);
       connection.query(queryString2, [result1[0].product_id , result1[0].title, result1[0].img_url, result1[0].address,result1[0].city,result1[0].state,result1[0].zip, result1[0].available, result1[0].price, result1[0].category, result1[0].secure, result1[0].description,result1[0].customer_id ],function (err, result2) {
         if (err) {
