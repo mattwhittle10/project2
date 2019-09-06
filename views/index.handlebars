@@ -1,10 +1,9 @@
 <!-- JUMBOTRON -->
-<div class="jumbotron jumbotron-fluid" style="background-color: #5477E8">
+<div class="jumbotron jumbotron-fluid shadow index-jumbo" style="background-color: #5477E8">
     <div class="container">
-        <h1 class="display-4">Hoarder Helper!</h1>
-        <p class="lead">We're connecting people with extra space to people with extra stuff!
+        <h1 class="display-4 index-title">Hoarder Helper</h1>
+        <p class="lead index-lead">Connecting people with extra space to people with extra stuff!
         </p>
-        <br>
         <br>
         <!-- SEARCH BAR -->
         <div class="input-group mb-3">
@@ -31,11 +30,13 @@
             <img class="card-img-top" src="{{this.img_url}}" alt="Property Image">
             <div class="card-body">
                 <h5 class="card-title">{{this.title}}</h5>
-                <p class="card-text">Price: ${{this.price}}/month</small></p>
-                <p class="card-text">Category: {{this.category}}</small></p>
-                <p class="card-text">Location: {{this.city}}, {{this.state}}</small></p>
+                <p class="card-text">Price: ${{this.price}}/month</p>
+                <p class="card-text">Category: {{this.category}}</p>
+                <p class="card-text">Location: {{this.city}}, {{this.state}}</p>
+                <div class="text-center" style="item-align:center">
                 <a href="/profile/listing/{{this.product_id}}" id="{{this.product_id}}"
                     class="btn btn-primary viewListing">View Listing</a>
+                </div>
             </div>
         </div>
         {{/each}}
@@ -43,7 +44,7 @@
 </div>
 	<!-- Footer -->
 	<div class="card footer">
-		<div class="card-footer" style="border-top: 2px solid #5477E8;border-bottom: 2px solid #5477E8">
+		<div class="card-footer" style="border-top: 1px solid #5477E8;border-bottom: 1px solid lightslategrey">
 			Real User's Comments
 		</div>
 		<div class="card-body">

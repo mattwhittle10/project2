@@ -13,7 +13,8 @@
     </div>
 </div>
 
-<h2 id="zipCodeTitle" style='margin-left:2%; margin-top:2%; color:#5477E8;'>Listings for Zip Code:{{zip}}</h2>
+<h3 id="zipCodeTitle" style='margin-left:2%; margin-top:2%; padding-bottom: 1%;color:#5477E8;'>Listings for Zip Code:{{zip}}</h3>
+<hr>
 <div class="mapView">Map View
     <label class="switch">
         <input type="checkbox" checked>
@@ -28,16 +29,14 @@
         <div id="cardsContainer" class="card-deck col-lg-6" style='margin-left:.5%;'>
             {{#each listings}}
             <div id="listingCards" class='card col-lg-6' style="margin-left: 1%; margin-bottom: 4%;">
-                <img class='card-img-top' src='{{this.img_url}}' alt='Card image cap'>
+                <img class='card-img-top card-img' src='{{this.img_url}}' alt='Card image cap'>
                 <div class='card-body'>
-                    <div class='card-title'>
-                        <h2>{{this.title}}</h2>
-                        <h5>Location:{{this.city}}</h5>
-                    </div>
-                    <p class='card-text'>
-                        <h6>Price: ${{this.price}}</h6>
-                    </p>
-                    <p class='card-text'><small class='text-muted'>Category: {{this.category}}</small></p>
+                    <h5 class="card-title">{{this.title}}</h5>
+                    <hr>
+                    <p class="card-text">Price: ${{this.price}}/month</p>
+                    <p class="card-text">Category: {{this.category}}</p>
+                    <p class="card-text">Location: {{this.city}}, {{this.state}}</p>
+
                     <div style="text-align:center"><a href='../profile/listing/{{this.product_id}}'
                             class='btn btn-primary'>View Listing</a><a class="favMarker"><i class="far fa-heart fa-2x"
                                 style="float:right"></i></a></div>

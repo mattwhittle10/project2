@@ -1,6 +1,8 @@
 $('.date-input').dateDropper({
     roundtrip: true,
-    disabledDays: "08/30/2019"
+    maxYear: '2025',
+    minYear: '2019',
+    lock: 'from'
 });
 
 $(".far").click(function () {

@@ -1,10 +1,142 @@
-h2 {
-    text-align: left;
+body{
+    /* needs height !! */
+    height: 100%;
 }
 
-img {
+
+/* index page */
+.index-jumbo{
+    padding: 30px 0 40px 0;
+}
+.index-title{
+    color: white;
+    font-weight: bold;
+    text-shadow:1px 1px black;
+}
+.index-lead{
+    font-weight: 600;
+    font-size: 24px;
+    padding-left: 90px;
+}
+.input-group{
+    margin: auto;
+    width: 70%;
+}
+img{
     width: 200px;
     height: 200px;
+}
+.each-listing-img{
+    height: auto;
+}
+
+
+/* index page cards */
+.card-title{
+    text-align: center;
+    font-size: 22px;
+}
+.card-text{
+    margin: 5px;
+}
+.btn-primary{
+    background-image: radial-gradient(#5476E8, #4A69CF);
+    border-color: #415CB5;
+    color: white;
+    margin-top: 25px;
+    font-weight: 400;
+}
+
+
+
+/* profile page  */
+.profile-jumbo{
+    padding: 10px;
+}
+.profile-title{
+    padding-top: 20px;
+    color: white;
+    text-shadow:1px 1px black;
+    font-size: 40px;
+    font-weight: 700;
+}
+/* clipboard and house icon on profile page */
+/* .usericon{
+    width: 60px;
+    height: auto;
+    margin: 0 30px 0 30px;
+    float: right;
+} */
+.profile-div{
+    margin: 0 0 0 100px;
+    top: 30px;
+}
+.profile-button{
+    margin: 0 20px 0 20px;
+}
+
+
+/* update user profile page */
+.updateProfile-title{
+    text-align: center;
+}
+.update-profile-img{
+    margin-top: 50px;
+    width: 300px;
+}
+
+/* create new listing page */
+.post-title{
+    text-align: center;
+}
+.createListing-img{
+    margin-top: 50px;
+    width: 400px;
+    height: 135px;
+}
+.post-button{
+    margin: 0 20px 0 20px;
+}
+
+
+/* update listing page */
+.update-title{
+    text-align: center;
+}
+.update-img{
+    margin-top: 50px;
+    width: 300px;
+}
+.update-button{
+    margin: 15px 20px 0 20px;    
+}
+
+
+/* each-listing page */
+.each-card{
+    margin-top: 10px;
+}
+.each-title{
+    text-align: center;
+    font-size: 34px;
+}
+.each-description{
+    font-size: 16px;
+}
+.each-calendarTitle{
+    text-align: center;
+}
+
+
+/* modals */
+#resumeTitle{
+    text-align: center;
+}
+
+
+
+h2 {
+    text-align: left;
 }
 .switch {
     position: relative;
@@ -68,7 +200,6 @@ input:checked + .slider:before {
 };
 
 
-/* update user information page  */
 
 /* styling the cards */
 .wrapper{
@@ -134,14 +265,11 @@ input:checked + .slider:before {
     margin: 20px;
 }
 
-.btn{
-    background-color:#5477E8;
-}
-
 /* footer */
-/* .card footer{
-    border-top: 2px solid #62BBC1;
-} */
+.footer{
+    position: relative;
+    bottom: 0;
+}
 
 .form-control{
     border: 1px solid #5477E8;
@@ -165,3 +293,28 @@ input:checked + .slider:before {
       color: white;
       background-color: #5477E8;
   }
+
+  div.datedropper.hoarder-theme {
+
+    --dd-color1: #5476E8;
+    --dd-color2: #FFF;
+    --dd-color3: #4D4D4D;
+    --dd-color4: #FFF;
+  
+    --dd-radius: 8px;
+    --dd-width: 180px;
+    --dd-shadow: 0 0 32px 0px rgba(0, 0, 0, 0.1);
+  
+  }
+
+
+  @media only screen and (max-width: 992px) {
+    .index-lead{
+        font-weight: 600;
+        font-size: 20px;
+        padding-left: 0;
+    } 
+    .input-group{
+        width: 100%;
+    }
+}

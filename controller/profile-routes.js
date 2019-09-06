@@ -34,7 +34,7 @@ router.get("/listing/:id", function (req, res) {
     var id = req.params.id;
     listing.indivListing(id,function(data){
       var listing = data;
-      console.log(listing);
+      console.log(req.user);
       res.render('each-listing', {user:req.user, listing});
     })
   });

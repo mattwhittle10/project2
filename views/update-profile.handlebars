@@ -1,10 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-4" style="padding-top: 30px" id="userprofilepic-large">
-      <img src="{{user.thumbnail}}" class="img-thumbnail" style="border: 1px solid #5477E8">
+      <img src="{{user.thumbnail}}" class="img-thumbnail update-profile-img" style="border: 1px solid #5477E8">
     </div>
     <div class="col-sm-8" style="padding-top: 30px">
-      <h2 style="color:#5477E8;">Update Profile!</h2>
+      <h2 class="updateProfile-title" style="color:#5477E8;">Update Profile</h2>
+      <hr>
       <form id="customerForm" class="needs-validation" novalidate>
         <div class="form-group">
           <label for="validationCustom01">First name</label>
@@ -63,7 +64,9 @@
         </div>
         <!--end of image upload input-->
         <hr> --}}
+        <div class="text-center" style="item-align:center">
         <button class="btn btn-primary userUpdateButton" type="submit" id="{{user.customer_id}}">Submit form</button>
+        </div>
         </form>
 
 

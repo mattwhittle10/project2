@@ -1,37 +1,36 @@
 <div class="container-fluid">
     <div class="d-flex flex-row bd-highlight">
-        <div class="col-lg-6" style='margin-left:.5%;'>
-            {{#listing}}
-            <div class='col-lg-6' style="margin-left: 1%; margin-bottom: 4%;padding-top: 30px">
-                <img src='{{this.img_url}}' alt='Listing Image'>
-                <div>
-                    <div>
-                        <h2>{{this.title}}</h2>
-                        <h5>Location:{{this.city}}</h5>
-                    </div>
-                    <p>
-                        <h6>Price: ${{this.price}}/month</h6>
-                    </p>
-                    <p>Category: {{this.category}}</small></p>
-                    <p>Description: {{this.description}}</small></p>
-
+        <div class="col-lg-6">
+    {{#listing}}
+            <div class="card shadow each-card">
+              <img src='{{this.img_url}}' class="card-img-top each-listing-img" alt='Listing Image'>
+              <div class="card-body">
+                <h5 class="card-title each-title">{{this.title}}</h5>
+                <hr>
+                <p class="card-text each-description">{{this.description}}</p>
+                <br>
+                <p class="card-text">Location: {{this.address}} {{this.city}}, {{this.state}}</p>
+                <p class="card-text">Price: ${{this.price}}/month</p>
+                <p class="card-text">Category: {{this.category}}</p>
+                    
                     {{!-- put calendar here!!! --}}
-                    <h5>Check calendar dates</h5>
-                    <input class="date-input" type="text" data-dd-default-date="12/31/2019"
-                        style="border: 1px solid #5477E8"><br><br>
-
+                    <h5 class="each-calendarTitle">Check availability</h5>
+                    <div class="text-center" style="item-align:center">
+                    <input class="date-input" type="text" data-dd-theme="hoarder-theme" style="border: 1px solid #5477E8">
+                    <input class="date-input" type="text" data-dd-theme="hoarder-theme" style="border: 1px solid #5477E8">
+                    </div>
                     {{!-- end of calendar --}}
-
-                    <div style="text-align:center"><input class='btn btn-primary' action="action"
-                            onclick="window.history.go(-1); return false;" type="button" value="Go Back" />
-                        <a id="modalButton" class='btn btn-primary' id='{{this.product_id}}'>Book Listing</a><a
-                             class="favorites"><i class="far fa-heart fa-2x" style="float:right"></i></a></div>
-                </div>
+            {{/listing}} 
+                    <div style="text-align:center"><input class='btn btn-primary' action="action" onclick="window.history.go(-1); return false;" type="button" value="Go Back" />
+                    {{#if user}}
+                        <a class='btn btn-primary' data-toggle="modal" data-target="#bookingModal" style="color:white;">Book</a>
+                    {{else}}
+                        <a class='btn btn-primary' data-toggle="modal" data-target="#signupModal" style="color:white;">Book</a>
+                    {{/if}}
+                        <a class="favorites"><i class="far fa-heart fa-2x" style="float:right"></i></a>
+                  </div>
+              </div>
             </div>
-            {{/listing}}
-
-
-
         </div>
 
         <div class="container-fluid">
@@ -43,6 +42,49 @@
 
         </div>
     </div>
+
+
+
+    <!-- BOOKING Modal -->
+<div class="modal fade" id="bookingModal" tabindex="-1" role="dialog" aria-labelledby="booking-listing" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Thank You!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                Your request for booking has been sent! Please wait 24 hours for the owner to approve your request. 
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<!-- SIGNUP Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="login-modal" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Whoops!</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                You need to sign up or log in to proceed with booking!
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
     <script>
 
